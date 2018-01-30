@@ -1,0 +1,66 @@
+<meta charset="utf-8">
+<div class="my_accountWrap">
+    <div class="my_accountMessage">
+        <ul class="accountMessage">
+            <li>
+                <p class="account_head"><img src="{{gData.userData.picUrl}}" alt=""></p>
+            </li>
+            <li>
+                <p><b>{{gData.userData.userName}}</b></p>
+            </li>
+            <li><p style="text-align: right;height: 60px;line-height: 60px;"><i class="icon iconfont icon-tongzhi" style="font-size: 20px;color: #44aaf6;"></i>&nbsp;Messages <b>+2</b></p></li>
+        </ul>
+    </div>
+    <div class="my_orderWrap">
+        <p class="my_orderHeader">
+            <a ng-if="paySatus!='undefined'&&paySatus!=''" ng-href="{{URL_ID}}/my_Center/all?statu="><span>All&nbsp;<b>({{page.totalCount}})</b></span></a>
+            <a ng-if="paySatus=='undefined'||paySatus==''" ng-href="{{URL_ID}}/my_Center/all?statu="><span class="span1">All&nbsp;<b>({{page.totalCount}})</b></span></a>
+            <a ng-if="paySatus!='1'" ng-href="{{URL_ID}}/my_Center/all?statu=1"><span>Wait Pay &nbsp;<b></b></span></a>
+            <a ng-if="paySatus=='1'" ng-href="{{URL_ID}}/my_Center/all?statu=1"><span class="span1">Wait Pay &nbsp;<b>({{page.totalCount}})</b></span></a>
+            <a ng-if="paySatus!='2'" ng-href="{{URL_ID}}/my_Center/all?statu=2"><span>Wait Send&nbsp;<b></b></span></a>
+            <a ng-if="paySatus=='2'" ng-href="{{URL_ID}}/my_Center/all?statu=2"><span class="span1">Wait Send&nbsp;<b>({{page.totalCount}})</b></span></a>
+            <a ng-if="paySatus!='3'" ng-href="{{URL_ID}}/my_Center/all?statu=3"><span>Wait Recive&nbsp;<b></b></span></a>
+            <a ng-if="paySatus=='3'" ng-href="{{URL_ID}}/my_Center/all?statu=3"><span class="span1">Wait Recive&nbsp;<b>({{page.totalCount}})</b></span></a>
+            <a ng-if="paySatus!='5'" ng-href="{{URL_ID}}/my_Center/all?statu=5"><span>Done&nbsp;<b></b></span></a>
+            <a ng-if="paySatus=='5'" ng-href="{{URL_ID}}/my_Center/all?statu=5"><span class="span1">Done&nbsp;<b>({{page.totalCount}})</b></span></a>
+        </p>
+        <div class="orderContent_zong"  ng-repeat="trade in tradeList">
+            <ul class="orderContent_header">
+                <li>
+                    <p>Buy Time:{{trade.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                    <p>Order No:{{trade.tradeNo}}</p>
+                </li>
+                <li>
+                    <p>Total Price:<label style="color:#b12704;margin-right: 20px;">{{trade.totalAmount|currency}}</label></p>
+                    <p  ng-if=" trade.payStatus == '0'" ><span><a ng-href="{{URL_ID}}/paytwo?tradeID={{trade.tradeID}}"><button>Go Buy</button></a></span><i></i></p>
+                    <p  ng-if=" trade.payStatus == '1'&&trade.tradeStatus=='3'" ><span><a ng-click="updateReceive(trade.tradeID)"><button>Recived</button></a></span><i></i></p>
+                </li>
+            </ul>
+            <ul class="orderContent_nav">
+                <li>Product Name</li>
+                <li>Count</li>
+				<li>Price</li>
+				<li>Status</li>
+            </ul>
+            <ul class="orderContent_content"  ng-repeat="tradeOrder in trade.tradeOrderList">
+                <li>
+                    <p><a href="{{URL_ID}}/xiangqing?itemID={{tradeOrder.itemID}}"><img lazy-src="{{tradeOrder.picUrl}}" alt=""></a></p>
+                    <p>
+                        <span><a href="{{URL_ID}}/xiangqing?itemID={{tradeOrder.itemID}}">{{tradeOrder.itemName}}</a></span></br>
+                        <span style="padding-top: 15px;"><b>{{tradeOrder.skuName}}</b></span></br>
+                    </p>
+                </li>
+                <li>{{tradeOrder.skuCount}}</li>
+                <li><label style="color:#b12704">{{tradeOrder.salesPrice |currency}}</label></li>
+                <li>
+                    <p>{{trade.statusString}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="order_paging">
+        <p   ng-click="previous()"><i class="icon iconfont icon-zuo1" style="font-size: 16px;color: darkgray"></i>Previous</p>
+        <p>[{{page.totalCount}}] ，[{{page.pageNo}}/{{page.pageCount}}]</p>
+        <p ng-click="next()">Nnext<i class="icon iconfont icon-you" style="font-size: 16px;color: darkgray"></i></p>
+    </div>
+</div>

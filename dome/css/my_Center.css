@@ -1,0 +1,1040 @@
+.my_Center_wrap{
+    padding: 50px;
+    overflow: hidden;
+    font-size: 18px;
+    background: white;
+}
+.my_Center_left{
+    width: 18%;
+    float: left;
+}
+.my_Center_left ul{
+    margin-bottom: 50px;
+    padding-left: 30px;
+}
+.my_Center_left ul li{
+    line-height: 40px;
+    cursor: pointer;
+}
+.my_Center_right{
+    width: 82%;
+    float: right;
+}
+/*————————————————————————————————首页————————————————————————————*/
+.my_accountWrap,.my_collectWrap{
+    width: 100%;
+    float: right;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+.my_accountMessage{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.accountMessage li{
+    float: left;
+    padding-right: 20px;
+}
+.accountMessage li:last-child{
+    float: right;
+}
+.accountMessage li:nth-child(2) p{
+    line-height: 60px;
+}
+.accountMessage li:nth-child(2) p:last-child span{
+    margin-right: 30px;
+}
+.account_head{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid gainsboro;
+    overflow: hidden;
+}
+.account_head1{
+    width: 60px;
+    height: 60px;
+    border: 2px solid gainsboro;
+    overflow: hidden;
+}
+.account_head img,.account_head1 img{
+    width: 110%;
+    height: 110%;
+    margin-left: -3px;
+    margin-top: -3px;
+}
+.my_orderWrap{
+    font-size: 16px;
+}
+.my_orderHeader,.my_collectHeader{
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 50px;
+}
+.my_orderHeader span,.my_collectHeader span{
+    float: left;
+    width: 15%;
+    padding: 5px;
+    margin: 0 2.5%;
+    text-align: center;
+}
+.my_orderHeader span:hover,.my_collectHeader span:hover{
+    border-bottom: 3px solid #44aaf6;
+}
+.span1{
+    border-bottom: 3px solid #44aaf6;
+}
+
+.orderContent_zong{
+    border: 1px solid gainsboro;
+    margin-bottom: 20px;
+}
+.orderContent_header{
+    line-height: 40px;
+    background: #fbfbfb;
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+    padding: 0 10px;
+    font-size: 16px;
+}
+.orderContent_header li:first-child{
+    float: left;
+    width: 60%;
+}
+.orderContent_header li:first-child p{
+    display: inline-block;
+    margin-right: 25px;
+}
+.orderContent_header li:last-child{
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+.orderContent_header li:last-child p{
+    display: inline-block;
+}
+.orderContent_content,.orderContent_nav{
+    overflow: hidden;
+}
+.orderContent_content li,.orderContent_nav li{
+    float: left;
+    width: 15%;
+    padding: 10px;
+}
+.orderContent_nav li:first-child,.orderContent_content li:first-child{
+    width: 50%;
+}
+.orderContent_nav li:last-child,.orderContent_content li:last-child{
+    width: 20%;
+}
+.orderContent_content li:first-child p:first-child{
+    width: 35%;
+    float: left;
+    padding: 10px;
+}
+.orderContent_content li:first-child p:last-child{
+    width: 65%;
+    float: left;
+    padding-left: 10px;
+}
+.orderContent_content li p:last-child span{
+    display: inline-block;
+    line-height: 30px;
+}
+.orderContent_content li p img{
+    width: 100%;
+    height: 120px;
+}
+.orderContent_content li:last-child p button{
+    width: 130px;
+    height: 30px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #44aaf6;
+    margin-top: 20px;
+}
+.order_paging{
+    float: right;
+}
+.order_paging p{
+    display: inline-block;
+    line-height: 60px;
+    font-size: 20px;
+}
+.order_paging p:nth-child(2){
+    margin: 0 20px;
+    color: #3da8f9;
+}
+.collect_content{
+    overflow: hidden;
+}
+.collect_content_left,.collect_content_right{
+    float: left;
+}
+.collect_content_left{
+    width: 22%;
+    cursor:pointer;
+}
+.collect_content_left p:first-child{
+    padding: 20px;
+    border: 1px solid gainsboro;
+}
+.collect_content_left p:first-child img{
+    width: 100%;
+    height: 141px;
+}
+.collect_content_left p:last-child{
+    line-height: 50px;
+    border: 1px solid gainsboro;
+    border-top: none;
+    text-align: center;
+}
+.collect_content_right{
+    width: 78%;
+    float: right;
+    border: 1px solid gainsboro;
+    border-left: none;
+}
+.collect_content_right li{
+    overflow: hidden;
+    width: 100%;
+}
+.collect_content_right li:first-child{
+    height: 50px;
+}
+.collect_content_right li:first-child p:first-child{
+    float: left;
+    margin-left: 20px;
+}
+.collect_content_right li:first-child p:first-child span{
+    float: left;
+    width: 50px;
+    height: 30px;
+    border: 1px solid gainsboro;
+    margin-top: 10px;
+    text-align: center;
+}
+.collect_content_right li:first-child p:last-child{
+    height: 30px;
+    margin-top: 10px;
+}
+.collect_content_right li:first-child p:last-child span{
+    display: inline-block;
+    margin-right: 15px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 5px;
+    line-height: 30px;
+    font-size: 16px;
+}
+.collect_content_right li:first-child p:first-child span:hover{
+    border: 2px solid #44aaf6;
+}
+.Shangxin{
+    border-radius:5px 0 0 5px;
+}
+.Remai{
+    border-radius: 0 5px 5px 0;
+}
+.collect_content_right li:first-child p:last-child{
+    float: right;
+}
+.collect_content_right li:last-child{
+    overflow: hidden;
+}
+.collect_content_right li:last-child p{
+    width: 25%;
+    text-align: center;
+    padding-bottom: 15px;
+    line-height: 20px;
+    float: left;
+}
+.collect_content_right li:last-child p img{
+    width: 100%;
+    height: 148px;
+    padding: 15px;
+}
+/*————————————————————————————————收货地址————————————————————————————*/
+.my_center_address{
+    padding: 20px;
+}
+.my_address_contet li{
+    position: relative;
+    padding: 1px
+}
+.my_address_contet li:first-child{
+    margin-top: 30px;
+}
+.my_address_contet li p{
+    display: inline-block;
+    font-size: 18px;
+    color: gray;
+}
+.my_address_contet li input{
+    height: 35px;
+    border: 1px solid gainsboro;
+    padding: 5px;
+    font-size: 16px;
+    width: 350px;
+    -moz-box-shadow:0px 0px 1px gainsboro;
+    -webkit-box-shadow:0px 0px 1px gainsboro;
+    -o-box-shadow:0px 0px 1px gainsboro;
+    -ms-box-shadow:0px 0px 1px gainsboro;
+    box-shadow:0px 0px 1px gainsboro;
+}
+.my_address_contet li:nth-child(5) input,.my_address_contet li:last-child input{
+    width: 240px;
+}
+.my_address_contet li p:first-child{
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+.my_address_contet li:nth-child(3){
+    overflow: hidden;
+    margin-top: 50px;
+}
+.my_address_contet li:nth-child(3) p{
+    float: left;
+    line-height: 35px;
+    margin-right: 8px;
+}
+.sel{
+    width: 150px;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 10px;
+    margin-right: 50px;
+    background: #fcfdfd;
+    font-size: 16px;
+    border: 1px solid gainsboro;
+}
+.my_address_contet li:nth-child(5) p:nth-child(3){
+    margin-left: 60px;
+}
+.my_address_contet li:last-child p button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #44aaf6;
+    background: #44aaf6;
+    color: white;
+    border-radius: 5px;
+}
+.addressArea{
+    width: 350px;
+    height: 100px;
+    border: 1px solid gainsboro;
+    -moz-box-shadow:0px 0px 1px gainsboro;
+    -webkit-box-shadow:0px 0px 1px gainsboro;
+    -o-box-shadow:0px 0px 1px gainsboro;
+    -ms-box-shadow:0px 0px 1px gainsboro;
+    box-shadow:0px 0px 1px gainsboro;
+}
+.alladdress_hrader{
+    line-height: 50px;
+}
+.alladdress_hrader span{
+    color: #44aaf6;
+}
+.myadd_table{
+    width: 100%;
+    color: #808080;
+    margin-bottom: 50px;
+}
+.myadd_table .alladdress_myNav,.myadd_table .alladdress_myCenter{
+    border: 1px solid gainsboro;
+}
+.myadd_table .alladdress_myCenter{
+    border-top: none;
+}
+.alladdress_myCenter:hover{
+    color: black;
+    border: 2px solid #44aaf6;
+    /*-webkit-animation: pulse 0.2s linear;*/
+    /*-moz-animation: pulse 0.2s linear;*/
+    /*-ms-animation: pulse 0.2s linear;*/
+    /*-o-animation: pulse 0.2s linear;*/
+    /*animation: pulse 0.2s linear;*/
+}
+.alladdress_myNav{
+    background: #fafafa;
+}
+.alladdress_myNav li,.alladdress_myCenter li{
+    padding: 10px;
+    text-align: left;
+    float: left;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.tab_name{
+    width: 13%;
+}
+.tad_add {
+    width: 23%;
+}
+.tad_phone{
+    width: 16%;
+}
+.tab_hand{
+    width: 25%;
+}
+.tab_hand{
+    overflow: hidden;
+}
+.tab_hand p:first-child{
+    float: left;
+    cursor: pointer;
+}
+.tab_hand p:first-child span{
+    color: #44aaf6;
+}
+.tab_hand p:last-child{
+    float: right;
+    padding: 0 10px;
+    color: #44aaf6;
+    border: 1px solid #44aaf6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Default{
+    display: none;
+}
+.last_td:hover .Default{
+    display: block;
+    -webkit-animation: bounceInUp 0.3s linear;
+    -moz-animation: bounceInUp 0.3s linear;
+    -ms-animation: bounceInUp 0.3s linear;
+    -o-animation: bounceInUp 0.3s linear;
+    animation: bounceInUp 0.3s linear;
+}
+
+/*————————————————————————————————账号绑定————————————————————————————*/
+.bind_Account{
+    padding: 20px 20px 40px 20px;
+    font-size: 16px;
+}
+.bind_Account ul li{
+    overflow: hidden;
+    height: 40px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    background: #f4f4f4;
+
+}
+.bind_Account ul li p{
+    float: left;
+    line-height: 40px;
+}
+.bind_Account ul li p:last-child{
+    float: right;
+}
+.bind_Account .yes_bind{
+    color: #7ed656;
+}
+.bind_Account .yess_bind{
+    color: #f5ba80;
+}
+.bind_Account .no_bind{
+    color: #44aaf6;
+}
+/*————————————————————————————————浏览历史————————————————————————————*/
+.browHistory{
+    /*height: 500px;*/
+    padding: 30px 20px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.browHistory_header{
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+    line-height: 50px;
+}
+.browHistory_header p:first-child{
+    float: left;
+    line-height: 50px;
+}
+.browHistory_header p:first-child span{
+    margin-right: 30px;
+}
+.browHistory_header p:first-child span:hover{
+    color: #44aaf6;
+}
+.browHistory_header p:last-child{
+    float: right;
+}
+.browHistory_header p:last-child button{
+    width: 80px;
+    height: 30px;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    font-size: 14px;
+    color: gray;
+}
+.browHistory_center{
+    margin-top: 20px;
+    overflow: hidden;
+}
+.browHistory_center_left{
+    width: 5%;
+    float: left;
+}
+.browHistory_center_left p{
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #44aaf6;
+    border-radius: 50%;
+
+}
+.browHistory_center_left p span{
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: #44aaf6;
+    border-radius: 50%;
+    margin: 2px auto;
+}
+.browHistory_center_right1{
+    margin-bottom: 10px;
+}
+.browHistory_center_right,.browHistory_center_right1{
+    width: 95%;
+    float: right;
+    overflow: hidden;
+}
+.browHistory_center_right a{
+    color: black;
+}
+.browHistory_center_right li{
+    float: left;
+    margin-right: 4%;
+    margin-bottom: 30px;
+    border: 1px solid gainsboro;
+    width: 22%;
+    cursor:pointer;
+}
+.browHistory_center_right li:nth-child(4n){
+    margin-right: 0;
+}
+.browHistory_center_right li:hover{
+    border: 1px solid #44aaf6;
+}
+.browHistory_center_right li p:first-child{
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+.browHistory_center_right li p:first-child span{
+    display: block;
+    line-height: 25px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.browHistory_center_right li p:first-child img{
+    width: 100%;
+    height: 120px;
+}
+.browHistory_center_right li p:last-child{
+    line-height: 40px;
+    border-top: 1px solid gainsboro;
+    text-align: center;
+    background: #fafafa;
+}
+/*————————————————————————————————收藏商品————————————————————————————*/
+
+.Goods_header2{
+    border-bottom: 2px solid #44aaf6;
+}
+.Goods_content{
+    overflow: hidden;
+}
+.Goods_content li{
+    float: left;
+    margin-right: 4%;
+    margin-top: 30px;
+    border: 1px solid gainsboro;
+    width: 22%;
+    cursor:pointer;
+}
+.Goods_content li:nth-child(4n){
+    margin-right: 0;
+}
+.Goods_content li:hover{
+    border: 1px solid #44aaf6;
+    -webkit-animation: pulse 0.5s linear;
+    -moz-animation: pulse 0.5s linear;
+    -ms-animation: pulse 0.5s linear;
+    -o-animation: pulse 0.5s linear;
+    animation: pulse 0.5s linear;
+}
+.Goods_content li p a:hover{
+    color: #44aaf6;
+}
+.Goods_content li p:first-child{
+    padding: 10px;
+    position: relative;
+}
+.Goods_content li p:first-child i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    color: gray;
+    visibility: hidden;
+}
+.Goods_content li p:hover i{
+    visibility: visible;
+    color: #af2f2f !important;
+    -webkit-animation: zoomIn 0.5s linear;
+    -moz-animation: zoomIn 0.5s linear;
+    -ms-animation: zoomIn 0.5s linear;
+    -o-animation: zoomIn 0.5s linear;
+    animation: zoomIn 0.5s linear;
+}
+.Goods_content li p:first-child span{
+    display: block;
+    line-height: 25px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.Goods_content li p:first-child img{
+    width: 100%;
+    height: 120px;
+}
+.Goods_content li p:last-child{
+    line-height: 40px;
+    border-top: 1px solid gainsboro;
+    text-align: center;
+    background: #fafafa;
+}
+/*————————————————————————————————收藏店铺————————————————————————————*/
+.houseShop{
+    padding: 40px 20px 50px 20px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.houseShop_header{
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+}
+.houseShop_header ul li{
+    overflow: hidden;
+}
+.houseShop_header ul li:first-child span{
+    float: left;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+.houseShop_header ul li:first-child{
+    width: 50%;
+    float: left;
+}
+.houseShop_header ul li:first-child p{
+    float: left;
+    padding: 5px 25px;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.houseShop_header ul li:first-child p:hover{
+    border-bottom: 2px solid #44aaf6;
+}
+.houseShop_header li:last-child{
+    float: right;
+    overflow: hidden;
+    width: 50%;
+}
+.houseShop_header li:last-child p{
+    float: right;
+    line-height: 35px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+.houseShop_header li:last-child p:first-child{
+    border-radius: 5px 0 0 5px;
+    margin-left: 10px;
+}
+.houseShop_header li:last-child p:first-child input{
+    border: none;
+    padding: 0 10px;
+}
+.houseShop_header li:last-child p:first-child span{
+    display: inline-block;
+    border-left: 1px solid gainsboro;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background: #f4f4f4;
+    color: gray;
+}
+.houseShop_content_header{
+    margin-top: 20px;
+}
+.houseShop_content_header p{
+    display: inline-block;
+    line-height: 35px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+
+}
+.houseShop_content_header p:hover{
+    background: #e6f4ff;
+    color: #44aaf6;
+}
+
+/*————————————————————————————————消息提醒————————————————————————————*/
+.messRemder{
+    /*height: 500px;*/
+    padding: 20px 40px 50px 40px;
+    color: grey;
+    font-size: 14px;
+    line-height: 45px;
+}
+.systemMess p:first-child,.interactMess p:first-child{
+    color: black;
+    font-size: 16px;
+}
+.systemMess p,.interactMess p{
+    overflow: hidden;
+}
+.systemMess p span,.interactMess p span{
+    float: left;
+}
+.systemMess p span:nth-child(1),.interactMess p span:nth-child(1){
+    width: 15%;
+}
+.systemMess p span:nth-child(2),.interactMess p span:nth-child(2){
+    width: 75%;
+    font-size: 12px;
+}
+.systemMess p span:nth-child(3),.interactMess p span:nth-child(3){
+    width: 10%;
+}
+/*————————————————————————————————订单中心————————————————————————————*/
+.myOrder_wrap {
+    font-size: 16px;
+    padding: 20px;
+}
+.order_commonnav{
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 20px;
+}
+.order_commonnav li{
+    float: left;
+    margin-right: 20px;
+}
+.order_commonnav li:last-child{
+    float: right;
+    border-bottom: none;
+}
+.order_Header{
+    overflow: hidden;
+    width: 80%;
+}
+.order_Header span{
+    float: left;
+    width: 14%;
+    margin: 0 1%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.order_Header span:hover{
+    border-bottom: 3px solid #44aaf6;
+    color: #44aaf6;
+}
+.span1{
+    border-bottom: 3px solid #44aaf6;
+    color: #44aaf6;
+}
+.ordre_commonSeach{
+    border: 1px solid gainsboro;
+    width: 350px;
+    margin-bottom: 20px;
+    height: 36px;
+}
+.ordre_commonSeach input{
+    width: 85%;
+    height: 34px;
+    border: none;
+    padding: 0 10px;
+}
+.ordre_commonSeach span{
+    display: inline-block;
+    width: 15%;
+    height: 33px;
+    text-align: center;
+    background: #fafafa;
+    line-height: 33px;
+    border-left: 1px solid gainsboro;
+}
+.order_commonTable{
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+.order_commonTable tr td{
+    width: 100%;
+    line-height: 50px;
+    overflow: hidden;
+}
+.order_commonTable tr td p{
+    float: left;
+    width: 50%;
+}
+.order_commonTable tr td input{
+    width: 140px;
+    height: 33px;
+    padding-left: 10px;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+}
+.myOrder{
+    border: 1px solid #d0e7fa;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.myOrder1{
+    border: 1px solid gainsboro;
+}
+.myOrder_header{
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 10px;
+    background: #edf7ff;
+    overflow: hidden;
+    border-bottom: 1px solid #d0e7fa;
+}
+.myOrder_header1{
+    background: #fbfbfb;
+    border-bottom: 1px solid gainsboro;
+}
+.myOrder_header li:first-child p:first-child label{
+    line-height: 28px;
+    background: white;
+    width: 28px;
+    height: 28px;
+}
+.myOrder_header li{
+    float: left;
+}
+.myOrder_header li:first-child p{
+    display: inline-block;
+    margin-right: 20px;
+}
+.myOrder_header li:first-child p:nth-child(1){
+    margin-right: 10px;
+}
+.myOrder_header li:last-child p a{
+    text-decoration:underline;
+}
+.myOrder_content,.myOrder_nav{
+    overflow: hidden;
+    padding: 5px 10px;
+}
+.myOrder_nav{
+    background: #fbfbfb;
+    border: 1px solid gainsboro;
+}
+.myOrder_content li,.myOrder_nav li{
+    float: left;
+    width: 15%;
+    padding: 5px 10px;
+    text-align: center;
+}
+.myOrder_content li:first-child,.myOrder_nav li:first-child{
+    text-align: left;
+}
+.myOrder_content li:nth-child(2),.myOrder_nav li:nth-child(2){
+    width: 10%;
+}
+.myOrder_nav li:first-child,.myOrder_content li:first-child{
+    width: 40%;
+}
+.myOrder_nav li:last-child,.myOrder_content li:last-child{
+    width: 20%;
+}
+.myOrder_content li:first-child p:first-child{
+    width: 40%;
+    float: left;
+    padding: 10px;
+}
+.myOrder_content li:first-child p:last-child{
+    width: 60%;
+    float: left;
+    padding-left: 10px;
+}
+.myOrder_content li p:last-child span{
+    display: inline-block;
+    line-height: 30px;
+}
+.myOrder_content li p img{
+    width: 100%;
+    height: 120px;
+}
+.myOrder_content li:last-child p button{
+    width: 100px;
+    height: 30px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #44aaf6;
+    margin: 0 0 10px 0;
+}
+/*————————————————————————————————个人资料————————————————————————————*/
+.personalData{
+    padding: 40px;
+    overflow: hidden;
+}
+.DataMessage{
+    width: 100%;
+    border-bottom: 2px dotted gainsboro;
+    color: grey;
+}
+.DataMessage td{
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+/*.DataMessage td:first-child{*/
+    /*width: 20%;*/
+    /*text-align: center;*/
+    /*padding-bottom: 30px;*/
+/*}*/
+.DataMessage td:last-child p{
+    display: inline-block;
+}
+/*.files{*/
+    /*border: 1px solid #44aaf6;*/
+    /*width: 80px;*/
+    /*padding: 5px 10px;*/
+    /*text-align: center;*/
+    /*border-radius: 5px;*/
+    /*color: #44aaf6;*/
+    /*cursor: pointer;*/
+    /*margin-bottom: 10px;*/
+/*}*/
+.DataMessage_conter li{
+    overflow: hidden;
+    margin: 30px 0 10px 0;
+    padding: 5px;
+}
+.DataMessage_conter li p{
+    float: left;
+}
+.DataMessage_conter li:nth-child(2) p input,.DataMessage_conter li:nth-child(4) p input{
+    height: 35px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    padding: 0 10px;
+}
+.DataMessage_conter li:nth-child(3) p span{
+    margin: 15px;
+}
+.DataMessage_conter li:nth-child(3) p input{
+    width: 25px;
+    height: 25px;
+    outline:none;
+}
+.DataMessage_conter li p:first-child{
+    width: 15%;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 20px;
+    color: grey;
+}
+.personalData button{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #44aaf6;
+    background: #44aaf6;
+    color: white;
+    float: right;
+    margin-top: 30px;
+}
+/*————————————————————————————————待收货————————————————————————————*/
+
+/*————————————————————————————————安全设置————————————————————————————*/
+
+.curity_Setting{
+    padding: 20px;
+    font-size: 16px;
+}
+.curity_Setting_conter div{
+    height: 40px;
+    line-height: 40px;
+}
+.curity_grade{
+    position: relative;
+    width: 200px;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    height: 20px;
+    top: 10px;
+}
+.curity_Setting_conter div p{
+    float: left;
+}
+.curity_Setting_conter div p:last-child{
+    float: right;
+    margin-right: 20px;
+}
+.curity_Setting_conter div p:first-child{
+    width: 10%;
+    height: 40px;
+}
+.curity_grade span:nth-child(1){
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 18px;
+    border-radius: 3px 0 0 3px;
+    top:0;
+    left: 0;
+    background: #fcac4d;
+}
+.curity_grade span:nth-child(2){
+    position: absolute;
+    top: -10px;
+    font-size: 14px;
+    right: -50px;
+    color: #fcac4d;
+}
+.curity_Setting_ul{
+    overflow: hidden;
+}
+.curity_Setting_ul li{
+    overflow: hidden;
+    height: 110px;
+    line-height: 110px;
+}
+.curity_Setting_ul li p{
+    float: left;
+    text-align: left;
+}
+.curity_Setting_ul li p:first-child{
+    width: 10%;
+}
+.curity_Setting_ul li p:nth-child(2){
+    width: 15%;
+}
+.curity_Setting_ul li p:nth-child(3){
+    width: 60%;
+}
+.curity_Setting_ul li p:last-child{
+    color: #3985c4;
+    width: 15%;
+    text-align: center;
+}
+.curity_Setting_ul li button{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #44aaf6;
+    background: #f0f9ff;
+}
+

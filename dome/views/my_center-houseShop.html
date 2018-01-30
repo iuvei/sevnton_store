@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<div class="houseShop">
+    <div class="houseShop_header">
+        <ul>
+            <li>
+                <p class="Goods_header2">Shop</p>
+                <span>|</span>
+                <p>Similar Shop</p>
+            </li>
+            <li>
+                <p>
+                    <input type="text">
+                    <span><i class="icon iconfont icon-sousuo_sousuo"></i></span>
+                </p>
+                <p style="padding: 0 10px">Batch Manage</p>
+            </li>
+        </ul>
+    </div>
+    <div class="houseShop_content">
+        <ul class="Goods_content" style="margin-bottom: 40px">
+            <li ng-repeat="favSupplier in favSupplierList">
+                <p><img lazy-src="{{favSupplier.logo}}" alt=""></p>
+                <p><a ng-href="{{URL_ID}}supplier?supplid={{favSupplier.supplierID}}">{{favSupplier.supplierName}}</a>
+                    <i class="icon iconfont icon-lianxiwomen" style="color: #44aaf6"></i></p>
+            </li>
+        </ul>
+    </div>
+</div>

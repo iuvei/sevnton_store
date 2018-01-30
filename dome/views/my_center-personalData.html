@@ -1,0 +1,63 @@
+<meta charset="utf-8">
+<div class="personalData">
+    <table class="DataMessage">
+        <tr>
+            <td>
+                <p class="account_head" style="margin: auto">
+                    <img ng-if="imageSrc == null" src="{{gData.userData.picUrl}}" alt="" enlarge-pic>
+                    <img ng-if="imageSrc != null" src="{{imageSrc}}" alt="" enlarge-pic>
+                </p>
+            </td>
+            <td>
+                <a href="javascript:;" class="a-upload">
+                    <input type="file" name="" id="touXiang" file-model="myFile">Change Head Portrait
+                </a>
+            </td>
+            <td>
+                <p class="account_head1" style="margin: auto">
+                    <img ng-if="imageSrc1 == null" src="{{gData.userData.companyPicUrl}}" alt="" enlarge-pic>
+                    <img ng-if="imageSrc1 != null" src="{{imageSrc1}}" alt="" enlarge-pic>
+                </p>
+            </td>
+            <td>
+                <a  href="javascript:;" class="a-upload">
+                    <input type="file" name="" id="YYzhiZhao" file-model="myFile">Change business license
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <ul class="DataMessage_conter">
+        <li>
+            <p>Truename:</p>
+            <p><input type="text" ng-model="gData.userData.name"></p>
+        </li>
+        <li>
+            <p>Nickname:</p>
+            <p><input type="text" ng-model="gData.userData.userName" disabled></p>
+        </li>
+        <li>
+            <p>Gender:</p>
+            <p>
+                <span><input type="radio" name="sex" id="boy">&nbsp;male</span>
+                <span><input type="radio" name="sex" id="girl">&nbsp;female</span>
+                <span><input type="radio" name="sex" id="baomi">&nbsp;secret</span>
+            </p>
+        </li>
+        <li>
+            <p>contact number:</p>
+            <p><input type="text" ng-model="gData.userData.phone"></p>
+        </li>
+    </ul>
+    <button ng-click="submits()">Save</button>
+</div>
+<!-- 图片放大遮罩层 -->
+<div class="mask" close-pic>
+    <div class="mask-box"></div>
+    <div class="big-pic-wrap">
+        <img src="" alt="" class="bigPic" />
+        <span class="close-pic"><i class="icon iconfont icon-tishicuohao"></i></span>
+    </div>
+</div>
+<script type="text/javascript">
+</script>

@@ -1,0 +1,123 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+<div class="xiangqing_content">
+    <div class="xiangqing_content1">
+        <div class="xiangqing_content_top">
+            <div class="FDJ">
+                <!----------放大镜部分------------->
+                <!--左侧原比例图片-->
+                <div id="small">
+                    <img id="smallimg" src="{{Detail.picUrl}}"/>
+                    <div id="area"></div>
+                </div>
+                <!--右侧大图-->
+                <div id="big">
+                    <img id="bigimg" src="{{Detail.picUrl}}"/>
+                </div>
+                <!--原图下方6个小图-->
+                <div id="manyPictures">
+                    <div id="wrap_div">
+                        <div id="move">
+                            <p ng-repeat="itemPics in Detail.itemPicList | limitTo:5">
+                                <img class="imgs" ng-src="{{itemPics.pic}}" ng-mouseover="tan(itemPics.pic)"/>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xiangqing_content_right">
+                <ul>
+                    <li class="skli1" ng-bind="Detail.itemName"></li>
+                    <li class="skli2">
+                        <p id="Prices" ng-if="values!=''||values1!=''">{{sigleMinPrice | currency}} - {{sigleMaxPrice |
+                            currency}}</p>
+                        <p id="price" ng-repeat="sku in Detail.skuList" ng-if="sku.skuName == skuName||sku.skuName == skuNames"
+                           style="line-height: 25px;margin-left:10px;">{{sku.salesPrice | currency}}</p>
+                        <p id="fudu">20% off</p>
+                        <p style="text-decoration: line-through;" ng-repeat="sku in Detail.skuList"
+                           ng-if="sku.skuName == skuName">{{sku.salesPrice*1.2 | currency}}</p>
+                    </li>
+                    <li class="skli3" ng-if="values!=''">
+                        <p id="values">{{values}}</p>
+                        <p ng-repeat="sku in Detail.skuList | unique: 'skuName0'">
+                            <!--ng-if="sku.skuName0 != null"-->
+                            <span ng-if="sku.skuName0 != null" class="xiangqing_Color hover1" toggle-class>{{sku.skuName0}}</span>
+                        </p>
+                    </li>
+                    <li class="skli4" ng-if="values1!=''">
+                        <p id="values1">{{values1}}</p>
+                        <p ng-repeat="sku in Detail.skuList | unique: 'skuName1'">
+                            <!--ng-if="sku.skuName1 != null"-->
+                            <span ng-if="sku.skuName1 != null" class="xiangqing_Size hover2" toggle-class>{{sku.skuName1}}</span>
+                        </p>
+                    </li>
+                    <li class="skli5">
+                        <p>Number</p>
+                        <p>
+                            <span ng-click="subtract()">－</span>
+                            <span class="good_num" ng-bind="text"></span>
+                            <span ng-click="add()">＋</span>
+                        </p>
+                        <p ng-repeat="sku in Detail.skuList" ng-if="sku.skuName == skuName||sku.skuName == skuNames"
+                          class="inventorys" style="line-height: 25px;margin-left:10px;">Inventory:&nbsp;{{sku.inventory}}</p>
+                    </li>
+                    <li class="skli6">
+                        <p>Postage</p>
+                        <p><strong>Free</strong></p>
+                        <p>Total:</p>
+                        <p><strong style="color: #aa2828;" ng-repeat="sku in Detail.skuList"
+                                   ng-if="sku.skuName == skuName||sku.skuName == skuNames"> {{text*sku.salesPrice | currency}}</strong></p>
+                    </li>
+                    <li class="skli7">
+                        <p>
+                            <button skuname="{{skuName}}" class="LJGMbtn" toggle-class>Go Buy</button>
+                            <button skuname="{{skuName}}" toggle-class>Add to Cart</button>
+                        </p>
+                    </li>
+                </ul>
+                <p style="font-size: 18px;margin-top: 20px;">
+                    <a style="text-decoration: underline;" ng-href="{{URL_ID}}supplier?supplid={{Detail.supplierID}}">{{Detail.supplierName}}</a>
+                    <span style="margin-left: 40px;color: #44aaf6;"><img style="margin-right: 10px;" ng-src="img/seach/leave.png"/>Contact Supplier</span>
+                </p>
+            </div>
+        </div>
+        <div class="xiangqing_content_right1">
+            <ul>
+                <li ng-repeat="item in itemList"><a ng-href="{{URL_ID}}/xiangqing?itemID={{item.itemID}}"
+                                                    target="_blank"><img lazy-src="{{item.picUrl}}" alt=""/><span>{{item.itemName}}</span>
+                    <p> ${{item.skuList[0].salesPrice}}</p></a></li>
+
+            </ul>
+        </div>
+        <div class="xiangqing_content_rleft1">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs clic_nav" role="tablist">
+                <li role="presentation" class="active"><a data-target="#details" aria-controls="home" role="tab"
+                                                          data-toggle="tab">Product Detail</a></li>
+                <li role="presentation"><a data-target="#afterSale" aria-controls="messages" role="tab" data-toggle="tab">Customer Service</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active goods_details" id="details" ng-bind-html="description | to_trusted"
+                     style="position: relative;left: 0;top: 0;"></div>
+                <div role="tabpanel" class="tab-pane" id="afterSale">2</div>
+            </div>
+        </div>
+    </div>
+    <section class="xiangqing_section" ng-mouseenter="offInterval()" ng-mouseleave="onInterval()">
+        <p style="font-size: 18px;margin-left: 60px;padding-top: 15px;">Browse History</p>
+        <div class="section_ul">
+            <ul class="sect_ul">
+                <li ng-repeat="recommend in recommends"><a ng-href="{{URL_ID}}/xiangqing?itemID={{recommend.itemID}}"
+                                                           target="_blank"><img ng-src="{{recommend.picUrl}}" alt=""/>
+                    <p>{{recommend.itemName}}</p><span>${{recommend.skuList[0].salesPrice}}</span></a></li>
+            </ul>
+        </div>
+        <img class="next" ng-click="last()" ng-src="img/next.png" alt=""/>
+        <img class="last" ng-click="next()" ng-src="img/last.png" alt=""/>
+    </section>
+</div>
+<div ng-include="'views/footer.html'"></div>

@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+<div class="helpCent_wrap">
+    <div class="helpCent_left">
+        <ul class="helpCent_type">
+            <li class="helpCent_type1" ng-repeat="help in contentHelp">
+                <p class="type1_con" help-left><b>{{help.categoryName}}</b><i style="float: right;font-size: 12px" class="icon iconfont icon-youjiantou1"></i></p>
+                <ul class="helpCent_type2" ng-repeat="helpSubject in help.helpSubjectList">
+                    <li>
+                        <p class="type2_con" help1-left><a href="{{URL_ID}}helpCenter?helpID={{helpSubject.helpID}}">{{helpSubject.title}}</a></p>
+                        <ul class="helpCent_type3">
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="helpCent_right" ng-bind-html="helpDetails | to_trusted">
+
+    </div>
+    <div class="clearfloat"></div>
+</div>
+
+<div ng-include="'views/footer.html'"></div>

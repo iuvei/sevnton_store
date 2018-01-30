@@ -1,0 +1,24 @@
+.partner{
+    width: 1200px;
+    margin: auto;
+    background-color: white;
+    padding: 20px 0 40px 0;
+}
+.partner h1{
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+.partner .partner_icon{
+    width: 19%;
+    margin: 0 .5%;
+    float: left;
+}
+.partner .partner_icon a{
+    width: 100%;
+    display: inline-block;
+}
+.partner .partner_icon img{
+    width: 100%;
+    height: auto;
+}

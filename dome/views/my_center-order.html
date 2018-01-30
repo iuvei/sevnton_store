@@ -1,0 +1,76 @@
+<meta charset="utf-8">
+<div class="myOrder_wrap">
+    <div class="myOrder_common">
+        <div class="myOrder_common_nav">
+            <ul class="order_commonnav">
+                <li class="order_Header">
+                    <a ng-if="paySatus!='undefined'&&paySatus!=''" ng-href="{{URL_ID}}/my_Center/order?statu="><span>All&nbsp;<b>({{page.totalCount}})</b></span></a>
+                    <a ng-if="paySatus=='undefined'||paySatus==''" ng-href="{{URL_ID}}/my_Center/order?statu="><span class="span1">All&nbsp;<b>({{page.totalCount}})</b></span></a>
+                    <a ng-if="paySatus!='1'" ng-href="{{URL_ID}}/my_Center/order?statu=1"><span>Wait Pay &nbsp;<b></b></span></a>
+                    <a ng-if="paySatus=='1'" ng-href="{{URL_ID}}/my_Center/order?statu=1"><span class="span1">Wait Pay &nbsp;<b>({{page.totalCount}})</b></span></a>
+                    <a ng-if="paySatus!='2'" ng-href="{{URL_ID}}/my_Center/order?statu=2"><span>Wait Send&nbsp;<b></b></span></a>
+                    <a ng-if="paySatus=='2'" ng-href="{{URL_ID}}/my_Center/order?statu=2"><span class="span1">Wait Send&nbsp;<b>({{page.totalCount}})</b></span></a>
+                    <a ng-if="paySatus!='3'" ng-href="{{URL_ID}}/my_Center/order?statu=3"><span>Wait Recive&nbsp;<b></b></span></a>
+                    <a ng-if="paySatus=='3'" ng-href="{{URL_ID}}/my_Center/order?statu=3"><span class="span1">Wait Recive&nbsp;<b>({{page.totalCount}})</b></span></a>
+                    <a ng-if="paySatus!='5'" ng-href="{{URL_ID}}/my_Center/order?statu=5"><span>Done&nbsp;<b></b></span></a>
+                    <a ng-if="paySatus=='5'" ng-href="{{URL_ID}}/my_Center/order?statu=5"><span class="span1">Done&nbsp;<b>({{page.totalCount}})</b></span></a>
+                </li>
+                <li><i class="icon iconfont icon-shanchu" style="font-size: 15px"></i>Orders Recycle Bin</li>
+            </ul>
+            <p class="ordre_commonSeach"><input placeholder="order code/item's name" type="text"><span><i class="icon iconfont icon-search"></i></span></p>
+            <table class="order_commonTable">
+                <tr>
+                    <td>
+                        <p>buy time&nbsp;&nbsp;
+                            <input type="text">&nbsp;-&nbsp;<input type="text">
+                        </p>
+                        <p>seller&nbsp;&nbsp;
+                            <input type="text">
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <ul class="myOrder_nav">
+        <li>Product Name</li>
+        <li>Count</li>
+        <li>Price</li>
+        <li>Status</li>
+    </ul>
+    </ul>
+    <div class="myOrder" ng-repeat="trade in tradeList">
+        <ul class="myOrder_header">
+            <li>
+                <p><label><input class="order_onecheck" style="background: white"  type="checkbox" order-check tradeid={{trade.tradeID}}><i>✓</i></label></p>
+                <p>Buy Time:{{trade.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                <p>Order No:{{trade.tradeNo}}</p>
+                <p>Total Price:<label style="color:#b12704">$  {{trade.totalAmount |number:2}}</label></p>
+            </li>
+            <li>
+                <p  ng-if=" trade.payStatus == '0'" ><span><a ng-href="{{URL_ID}}/paytwo?tradeID={{trade.tradeID}}"><button>Go Buy</button></a></span><i></i></p>
+                <p  ng-if=" trade.payStatus == '1'&&trade.tradeStatus=='3'" ><span><a ng-click="updateReceive(trade.tradeID)"><button>Recived</button></a></span><i></i></p>
+            </li>
+        </ul>
+        <ul class="myOrder_content"   ng-repeat="tradeOrder in trade.tradeOrderList">
+            <li>
+                <p><a href="{{URL_ID}}/xiangqing?itemID={{tradeOrder.itemID}}" target="_blank"><img lazy-src="{{tradeOrder.picUrl}}" alt=""></a></p>
+                <p>
+                    <span><a href="{{URL_ID}}/xiangqing?itemID={{tradeOrder.itemID}}" target="_blank" title="{{tradeOrder.itemName}}">{{tradeOrder.itemName| cut:true:25:' ...'}}</a></span></br>
+                    <span style="padding-top: 15px;">{{tradeOrder.skuName}}</span></br>
+                </p>
+            </li>
+            <li>{{tradeOrder.skuCount}}</li>
+            <li><label style="color:#b12704">$  {{tradeOrder.salesPrice |number:2}}</label></li>
+            <li>
+                <p>{{trade.statusString}}</p>
+                <p>订单详情</p>
+            </li>
+        </ul>
+    </div>
+    <div class="order_paging" style="margin-top: 20px">
+        <p ng-click="previous()"><i class="icon iconfont icon-zuo1" style="font-size: 16px;color: darkgray"></i>Previous</p>
+        <p>[{{page.totalCount}}] ， [{{page.pageNo}}/{{page.pageCount}}] </p>
+        <p ng-click="next()">Next<i class="icon iconfont icon-you" style="font-size: 16px;color: darkgray"></i></p>
+    </div>
+</div>

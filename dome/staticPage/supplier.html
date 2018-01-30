@@ -1,0 +1,118 @@
+<div ng-include="'views/header.html'"></div>
+<div class="supplier">
+    <div class="supplier_header">
+        <img style="height: 80px;margin-top: 5px" src="img/TC5.png" alt="">
+    </div>
+    <div class="supplier_nav">
+        <p class="sup1_nav">首页</p>
+        <p class="sup2_nav">产品</p>
+    </div>
+    <div class="supplier_banners">
+        <carousel interval="myInterval" no-wrap="noWrapSlides">
+            <slide ng-repeat="banner in banners" active="slide.active">
+                <a ng-href="{{banner.link}}" target="_blank"><img ng-src="{{banner.picUrl}}" style="margin:auto;height: 500px;width: 100%;"></a>
+                <div class="carousel-caption"></div>
+            </slide>
+        </carousel>
+    </div>
+    <div class="clearfloat"></div>
+    <div class="company_message">
+        <ul>
+            <li class="cmpy_left">
+                <img src="img/TC5.png" alt="">
+            </li>
+            <li class="cmpy_center">
+                <p class="cmpy_center_nav">
+                    <span class="cmpy_center_nav1">公司信息</span>
+                    <span>公司简介</span>
+                </p>
+                <p class="cmpy_center_mes">公司名称:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes">主营产品:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes">成立时间:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes">公司地址:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes"><span>产品(80)</span><span>交易(90)</span></p>
+                <p class="cmpy_center_mes1">公司名称:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes1">主营产品:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes1">成立时间:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes1">公司地址:&nbsp;&nbsp;时间发货单上看风景呢</p>
+                <p class="cmpy_center_mes1"><span>产品(80)</span><span>交易(90)</span></p>
+            </li>
+            <li class="cmpy_rigt">
+                <p>
+                    <img src="" alt="">
+                    <span>会计师的健身卡即可</span>
+                </p>
+                <p>
+                    <button><i class="icon iconfont icon-lianxiwomen" style="color: #44aaf6;font-size: 16px "></i>&nbsp;&nbsp;联系商家</button>
+                </p>
+                <p>
+                    <button><i class="icon iconfont icon-shoucang1" style="color: gainsboro; font-size: 16px"></i>&nbsp;&nbsp;收藏店铺</button>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="supplier_goods">
+        <p style="width: 100%;font-size: 25px;border-bottom: 1px solid gainsboro;margin: 60px 0 20px 0;padding: 0 20px"><strong>店铺商品</strong></p>
+        <ul>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室李开复就好撒打开了经济法附近看到了啥李开复</p>
+            </li>
+        </ul>
+        <p style="width: 100%;font-size: 20px;text-align: right;color: #44aaf6">查看全部 >></p>
+    </div>
+    <div class="company_show">
+        <p style="width: 100%;font-size: 25px;border-bottom: 1px solid gainsboro;margin: 60px 0 20px 0;padding: 0 20px"><strong>公司展示</strong></p>
+        <ul>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div ng-include="'views/footer.html'"></div>

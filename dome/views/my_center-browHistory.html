@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<div class="browHistory">
+    <div class="browHistory_header">
+        <p>
+            <span>All Records</span>
+        </p>
+        <p><button ng-click="freeHisotry()">Delete Records</button></p>
+    </div>
+    <div class="browHistory_center">
+        <ul class="browHistory_center_right">
+            <li ng-repeat="historyItem in historyList">
+                <p>
+                    <a ng-href="{{URL_ID}}/xiangqing?itemID={{historyItem.itemID}}">
+                        <img lazy-src="{{historyItem.picUrl}}" alt="">
+                        <span title="{{historyItem.itemName}}">{{historyItem.itemName}}</span>
+                        <span><b>US $ {{historyItem.skuList[0].salesPrice}}</b></span>
+                    </a>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <p style="width: 100%; text-align: center">
+    <a   ng-click="previous()">Previous</a>
+    <a>[{{page.totalCount}}]，[{{page.pageNo}}/{{page.pageCount}}]</a>
+    <a ng-click="next()">Next</a>
+    </p>
+</div>

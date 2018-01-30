@@ -1,0 +1,152 @@
+<meta charset="utf-8">
+<meta charset="utf-8">
+<div>
+    <div class="register_nav">
+        <img ui-sref="home" src="img/logo.png"/>
+        <span><strong>Welcome Register</strong></span>
+    </div>
+    <div class="register_wrap">
+        <form name="myForm" novalidate class="col-xs-8 register_content" ng-submit="registBtn()">
+            <ul>
+                <li>
+                    <p>Country</p>
+                    <p>
+                        <select name="">
+                            <option value="">China</option>
+                            <option value="">US</option>
+                            <option value="">Canada</option>
+                            <option value="">UK</option>
+                        </select>
+                    </p>
+                </li>
+                <li style="height: auto;position: relative;">
+                    <p><sup>*</sup>Business Licence</p>
+                    <p style="position: absolute;top: -5px;">
+                        <a href="javascript:;" class="a-upload">
+                            <input type="file" name="" id="touXiang" file-model="myFile">Reload Business Licence
+                        </a>
+                    </p>
+                </li>
+                <li style="height: auto" ng-if="YYzhiZhaoSrc1!=null||YYzhiZhaoSrc1!=undefined">
+                    <p style="color: transparent;">aaaaa</p>
+                    <p style="width: 400px;"><img  style="max-width: 100%;margin: 20px 0" ng-src="{{companyPicUrl}}" alt=""></p>
+                </li>
+                <li>
+                    <p><sup>*</sup>userName</p>
+                    <p>
+                        <span style="color:red;font-size: 12px" ng-show="myForm.userName.$dirty && myForm.userName.$invalid">
+						<span ng-show="myForm.userName.$dirty&&myForm.userName.$error.required">*The user name is required!</span>
+						<span ng-show="myForm.userName.$dirty&&myForm.userName.$error.minlength">*User name length must not be less than 6 bits!</span>
+                        <span ng-show="myForm.userName.$dirty&&myForm.userName.$error.maxlength">*User name length cannot be greater than 16 bits !</span>
+                        <span ng-show="myForm.userName.$dirty&&myForm.userName.$error.unique">*This user name already exists!</span>
+						</span><br>
+                        <input class="Account"
+                               placeholder="Please enter a 6-16 bit user name "
+                               name="userName"
+                               ng-minlength="6"
+                               ng-maxlength="16"
+                               ensure-unique="userName"
+                               ng-model="data.userName"
+                               ng-required="true"/>
+                        <span ng-hide="myForm.userName.$invalid">
+                            <i class="icon iconfont icon-duihao1" style="font-size: 20px;color: #92dc72"></i>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p><sup>*</sup>e-mail</p>
+                    <p>
+                        <span style="color:red;font-size: 12px;" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                        <span ng-show="myForm.email.$dirty &&myForm.email.$error.required">*Mailbox is required!</span>
+                        <span ng-show="myForm.email.$dirty &&myForm.email.$error.email">*The mailbox format is incorrect!</span>
+                        <span ng-show="myForm.email.$dirty &&myForm.email.$error.minlength">*The mailbox must not be less than 6 bits!</span>
+                        </span><br>
+                        <input class="Email"
+                               type="email"
+                               name="email"
+                               ng-minlength="6"
+                               ng-model="data.email"
+                               ng-required="true"/>
+                        <span ng-hide="myForm.email.$invalid">
+                            <i class="icon iconfont icon-duihao1" style="font-size: 20px;color: #92dc72"></i>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p><sup>*</sup>password</p>
+                    <p>
+                        <!--<span class="mobil_verify"></span>-->
+                        <span style="color:red;font-size: 12px;" ng-show="myForm.pwds.$dirty && myForm.pwds.$invalid">
+                        <span ng-show="myForm.pwds.$dirty &&myForm.pwds.$error.required">*Password  is required!</span>
+                        <span ng-show="myForm.pwds.$dirty &&myForm.pwds.$error.pattern">*The password format is incorrect!</span>
+                        <span ng-show="myForm.pwds.$dirty &&myForm.pwds.$error.minlength">*Password length must not be less than 6 bits!</span>
+                        <span ng-show="myForm.pwds.$dirty &&myForm.pwds.$error.maxlength">*Password length must not be greater than 16 bits!</span>
+                        </span><br>
+                        <input class="password"
+                               type="password"
+                               name="pwds"
+                               ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/"
+                               ng-minlength="6"
+                               ng-maxlength="16"
+                               placeholder="6-16位数字和字母组合"
+                               ng-model="data.password"
+                               ng-required="true"/>
+                        <span ng-hide="myForm.pwds.$invalid">
+                            <i class="icon iconfont icon-duihao1" style="font-size: 20px;color: #92dc72"></i>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p><sup>*</sup>Confirm Password</p>
+                    <p>
+                        <span style="color: red;font-size: 12px;" ng-show="myForm.pwds.$valid">
+                        <span ng-show="myForm.pwdsagain.$dirty&&data.password!=data.confirmPassword">*The two password input is inconsistent!</span>
+                        </span></br>
+                        <input type="password"
+                               name="pwdsagain"
+                               ng-model="data.confirmPassword"
+                               ng-required="true"/>
+                        <span ng-show="data.password==data.confirmPassword&&data.password!=null&&data.confirmPassword!=null">
+                            <i class="icon iconfont icon-duihao1" style="font-size: 20px;color: #92dc72"></i>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p><sup>*</sup>Verification Code</p>
+                    <p>
+                        <span style="color: red;font-size: 12px;" ng-show="myForm.aa.$valid">
+                        <span ng-show="myForm.as.$dirty&&a!=as">*The verification code is incorrect!</span>
+                        </span></br>
+                        <input type="text" ng-model="as" name="as"/></p>
+                    <p>
+                        <input type="text"
+                               ng-init="a='1234'"
+                               ng-model="a"
+                               name="aa"
+                               disabled="">
+                    </p>
+                </li>
+            </ul>
+            <input class="button"
+                   type="submit"
+                   ng-disabled="myForm.userName.$invalid ||
+                    myForm.email.$invalid||
+                    myForm.pwds.$invalid||
+                    a!=as||data.password!=data.confirmPassword"
+                   value="Submit Register"/>
+        </form>
+        <div class="col-xs-4 register_right">
+            <ul>
+                <li>
+                    <p>Account number already exists?&nbsp;<a href="{{URL_ID}}/login?registerIs=1">Login</a></p>
+                    <p>Account number already exists, forgot my password?&nbsp;<a ui-sref="froget_pwd">get back password</a></p>
+                </li>
+                <li>
+                    <p><strong>About Mall</strong></p>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="promptMessage" hello-world></div>

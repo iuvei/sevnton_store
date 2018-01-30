@@ -1,0 +1,121 @@
+<meta charset="utf-8">
+<title>Shopping Cart</title>
+<div ng-include="'views/header.html'"></div>
+<div class="shopping_message">
+    <p style="font-size: 25px;margin-bottom: 30px;padding-left: 20px;line-height: 30px">
+        <b>My Cart</b>
+        <span style="font-size: 20px;line-height: 30px;">(&nbsp;{{nums}}&nbsp;)</span>
+    </p>
+    <div class="shoppcart_hide" ng-if="nums == 0">
+        <p>
+            <img src="img/emptyShopCart.png" alt="">
+        </p>
+        <p>
+            <span><b>There is no goods in the shopping cart. Go shopping~~</b></span></br>
+            <a ng-href="{{URL_ID}}/home">Go Shopping&nbsp;&nbsp;></a>
+        </p>
+    </div>
+    <div class="shoppcart_show" ng-if="nums != 0">
+        <div class="cart_allCont">
+            <table class="cart_table">
+                <tr class="cart_table_head">
+                    <td style="padding-left: 20px">
+                        <label all-orcan><input type="checkbox" class="all_check"><i>✓</i></label>
+                    </td>
+                    <td>
+                        官方旗舰店
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>联系商家</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td></td>
+                    <td>Item Name</td>
+                    <td>Quantity:</td>
+                    <td ng-click='CartSort("oneprice")'>Unit Price:</td>
+                    <td>Total:</td>
+                </tr>
+                <tr class="cart_table_cont" ng-repeat="cartMesiz in cartList">
+                    <td>
+                        <label><input type="checkbox" class="one_check" one-check
+                                      cartid={{cartMesiz.shoppingCartID}}><i>✓</i></label>
+                    </td>
+                    <td ng-cloak>{{cartMesiz.name}}
+                        <p><a ng-href="{{URL_ID}}/xiangqing?itemID={{cartMesiz.itemID}}"><img
+                                ng-src="{{cartMesiz.picUrl}}" alt=""/></a></p>
+                        <p><a ng-href="{{URL_ID}}/xiangqing?itemID={{cartMesiz.itemID}}"><span class="article_name">{{cartMesiz.itemName}}</span></a><br/><br/>
+                            <b>{{cartMesiz.skuName}}</b></p>
+                    </td>
+                    <td>
+                        <p>
+                            <button my-minus CartID={{cartMesiz.shoppingCartID}} ng-class="{cursors:true}">－</button>
+                            <input type="text" ng-cloak ng-model="cartMesiz.skuAcount"
+                                   CartID={{cartMesiz.shoppingCartID}}>
+                            <button my-adds CartID={{cartMesiz.shoppingCartID}} ng-class="{cursors:true}">+</button>
+                        </p>
+                    </td>
+                    <td ng-cloak>
+                        <p style="color: black;font-size: 16px;">US {{cartMesiz.salesPrice|currency}}</p>
+                        <p style="font-size: 14px;">US {{cartMesiz.salesPrice*1.2|currency}}</p>
+                        <p>20% OFF</p>
+                    </td>
+                    <td ng-cloak>
+                        <p style="font-size: 16px; font-weight: bold;">US <strong
+                                class="suBtotal">{{cartMesiz.price|currency}}</strong></p>
+                        <b>Free Postage</b>
+                        <p my-delete CartID={{cartMesiz.shoppingCartID}} style="cursor: pointer">Delete</p>
+                    </td>
+                </tr>
+            </table>
+            <div class="cart_allPric">
+                <div class="allPice">
+                    <p>Postage：<b style="font-size: 18px;">US&nbsp;$0.00</b></p><br/>
+                    <p>Total Price：<b style="color: #b04141;font-size: 20px;">US <strong
+                            class="Allprices">{{allPrices()|currency}}</strong></b></p>
+                </div>
+            </div>
+        </div>
+        <div style="height: 100px">
+            <div class="all_cartPric">
+                <div class="all_cartPric_left">
+                    <p style="padding-left: 20px; "><label all-orcan><input type="checkbox"
+                                                                            class="all_check"><i>✓</i></label> Check All</p>
+                    <p my-delete>Delete Selected Items</p>
+                    <p>Move To My Favorite Page</p>
+                </div>
+
+                <div class="all_cartPric_right">
+                    <!---->
+                    <p ng-click="clic_skuid()">
+                        <button style="font-size: 28px;height: 80px;border: none;color: white;width: 180px;background: #44aaf6;">
+                            <b>Go Settle</b></button>
+                    </p>
+                    <p style="margin-right: 30px;">
+                        <span style="line-height: 40px">Postage: <b style="font-size: 17px;">US&nbsp;$0.00</b></span><br/>
+                        <span>Total Price: <b style="font-size: 22px;color: #b04141">US&nbsp;<strong class="totalPic">{{allPrices()|currency}}</strong></b></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="return_shopping"><i class="glyphicon glyphicon-menu-left"></i><i class="glyphicon glyphicon-menu-left"
+                                                                                   style="margin-left: -10px;"></i><a
+                style="text-decoration: underline;color: black;" href="#"> Back Shopping Continue</a></p>
+    </div>
+</div>
+<section class="shopping_cart_section" ng-mouseenter="offInterval()" ng-mouseleave="onInterval()">
+    <p style="font-size: 18px;margin-left: 60px;padding-top: 15px;">May Be You Like</p>
+    <div class="shopping_section_ul">
+        <ul class="shopping_sect_ul">
+            <li ng-repeat="recommend in recommends">
+                <a ng-href="{{URL_ID}}/xiangqing?itemID={{recommend.itemID}}" target="_blank">
+                    <img src="{{recommend.picUrl}}" style="width: 173px;height: 173px;" alt=""/>
+                    <p>{{recommend.itemName}}</p><span>${{recommend.skuList[0].salesPrice}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <img class="shopping_next" src="img/next.png" alt="" ng-click="last()"/>
+    <img class="shopping_last" src="img/last.png" alt="" ng-click="next()"/>
+</section>
+<div ng-include="'views/footer.html'"></div>

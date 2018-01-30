@@ -1,0 +1,304 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.pay_message{
+	width: 1200px;
+	padding: 50px;
+	margin: auto;
+	background: white;
+	overflow: hidden;
+}
+.pay_message_nav{
+	width: 100%;
+	text-align: center;
+}
+.pay_address,.pay_conf_order{
+	width: 100%;
+	margin-top: 50px;
+	border: 1px solid gainsboro;
+	overflow: hidden;
+}
+.pay_address_header,.pay_order_header{
+	font-size: 25px;
+	line-height: 60px;
+	background: #fafafa;
+	padding-left: 30px;
+	border-bottom: 1px solid gainsboro;
+}
+.pay_address_wrap{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 100000;
+}
+.close_add{
+	position: absolute;
+	right: 5px;
+	top: 0;
+}
+.close_add i{
+	font-size: 30px;
+	color: grey;
+}
+.pay_address_contet{
+	padding: 0 20px 0 30px;
+	width: 1000px;
+	height: 600px;
+	position: absolute;
+	border: 8px solid darkgray;
+	left: 50%;
+	margin-left: -500px;
+	top: 50%;
+	margin-top: -300px;
+	background: white;
+	overflow: hidden;
+}
+.pay_address_contet li{
+	position: relative;
+	padding: 1px
+}
+.pay_address_contet li p{
+	display: inline-block;
+	font-size: 18px;
+	color: gray;
+}
+.pay_address_contet li input{
+	height: 35px;
+	border: 1px solid gainsboro;
+	padding: 5px;
+	font-size: 16px;
+	width: 400px;
+	-moz-box-shadow:0px 0px 1px gainsboro;
+	-webkit-box-shadow:0px 0px 1px gainsboro;
+	box-shadow:0px 0px 1px gainsboro; 
+}
+.pay_address_contet li:nth-child(5) input,.pay_address_contet li:last-child input{
+	width: 300px;
+}
+.pay_address_contet li p:first-child{
+	width: 100px;
+	text-align: right;
+	margin-right: 10px;
+}
+.pay_address_contet li:nth-child(3){
+	overflow: hidden;
+	margin-top: 30px;
+}
+.pay_address_contet li:nth-child(3) p{
+	float: left;
+	line-height: 35px;
+	margin-right: 8px;
+}
+.sel{
+	width: 150px;
+	border-radius: 5px;
+	height: 35px;
+	padding: 5px 10px;
+	margin-right: 50px;
+	background: #fcfdfd;
+	font-size: 16px;
+	/*margin: 1px;*/
+	border: 1px solid gainsboro;
+}
+.pay_address_contet li:nth-child(5) p:nth-child(3){
+	margin-left: 60px;
+}
+.pay_address_contet li:nth-child(8) p button{
+	width: 100px;
+	height: 40px;
+	border: 1px solid #44aaf6;
+	background: #44aaf6;
+	color: white;
+	border-radius: 5px;
+}
+#myadd_xiugai{
+	display: none;
+}
+.pay_address_contet1{
+	font-size: 12px;
+	width: 100%;
+	padding: 10px;
+}
+/*.jiaojiao{  }*/
+.manage_address{
+	width: 100%;
+	text-align: left;
+	font-size: 20px;
+}
+.manage_address p{
+	display: inline-block;
+	margin-right: 30px;
+	text-decoration: underline;
+	cursor:pointer;
+}
+.manage_address p:hover{
+	color: #2e6da4;
+}
+.pay_address_contet1 li{
+	text-align: left;
+	width: 22%;
+	border: 2px solid gainsboro;
+	display: inline-block;
+	padding: 8px;
+	margin: 10px 1.4%;
+	position: relative;
+	cursor:pointer;
+}
+.jiaojiao{
+	position: absolute;
+	right: 0;
+	top: -6px;
+	font-size: 30px;
+	color: gainsboro;
+}
+.jiaojiao1{
+	color: #44aaf6;
+}
+.address_sigle{
+	border: 2px solid #44aaf6 !important;
+}
+.pay_address_contet1 li p:first-child{
+	margin-bottom: 10px;
+}
+.pay_address_contet1 li p:nth-child(2){
+	/*padding-bottom: 15px;*/
+	border-bottom: 2px dotted gainsboro;
+}
+.pay_address_contet1 li p:nth-child(3){
+	line-height: 25px;
+	text-align: right;
+}
+.pay_address_contet1 li p:nth-child(3) span{
+	margin-left: 15px;
+	cursor:pointer;
+	color: #44aaf6;
+}
+.store_message{
+	overflow: hidden;
+	font-size: 20px;
+}
+.store{
+	float: left;
+}
+.store a{
+	text-decoration: underline;
+}
+.merchant{
+	float: right;
+	margin-right: 130px;
+	color: #44aaf6;
+}
+.merchant img{
+	margin-right: 10px;
+}
+.order_content{
+	width: 100%;
+	padding: 20px;
+}
+.order_nav{
+	margin-top: 20px;
+}
+.order_nav ul,.order_article ul,.message_buyer ul{
+	overflow: hidden;
+	padding: 0 10px;
+}
+.order_nav ul li,.order_article ul li{
+	float: left;
+	padding: 0 20px 0 0;
+	font-size: 16px;
+	color: gray;
+}
+.order_nav ul li:first-child,.order_article ul li:first-child{
+	width: 40%;
+}
+.order_article ul li:first-child{
+	padding: 0 0 0 0;
+}
+.order_nav ul li:nth-child(2),.order_article ul li:nth-child(2){
+	width: 16%;
+}
+.order_nav ul li:nth-child(3),.order_nav ul li:last-child,.order_article ul li:nth-child(3),.order_article ul li:last-child{
+	width: 22%;
+}
+.order_article ul{
+	border-bottom: 1px solid gainsboro;
+	padding: 20px 0;
+}
+.order_article ul li:first-child p:first-child{
+	float: left;
+	width: 30%;
+}
+.order_article ul li:first-child  p:first-child img{
+	width: 100%;
+	height: 120px;
+}
+.order_article ul li span{
+	color: black;
+	line-height: 25px;
+}
+.order_article ul li:first-child  p:last-child{
+	float: right;
+	width: 70%;
+	padding: 0 40px;
+}
+.article_name{
+	display: block;
+}
+.order_article ul li:nth-child(3) p:last-child{
+	text-decoration: line-through;
+}
+.order_article ul li:last-child{
+	color: black;
+}
+.message_buyer ul {
+	margin-top: 20px;
+}
+.message_buyer ul textarea{
+	height: 80px;
+	width: 90%;
+	border: 1px solid gainsboro;
+	padding: 5px 10px;
+	-moz-box-shadow:0px 0px 1px gainsboro;
+	-webkit-box-shadow:0px 0px 1px gainsboro;
+	box-shadow:0px 0px 1px gainsboro; 
+}
+.message_buyer ul li{
+	float: left;
+	font-size: 16px;
+}
+.message_buyer ul li:first-child{
+	width: 12%;
+}
+.message_buyer ul li:nth-child(2){
+	width: 66%;
+}
+.message_buyer ul li:last-child{
+	width: 22%;
+	line-height: 30px;
+}
+.message_foot_inp{
+	font-size: 22px;
+	float: right;
+	margin: 50px 0;
+}
+.message_foot_inp button{
+	width: 220px;
+	height: 60px;
+	background: #44aaf6;
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+.mobil_verify{
+	font-size: 12px;
+	position: absolute;
+	top: -20px;
+	color: red;
+	line-height: 20px;
+	/*display: none;*/
+}

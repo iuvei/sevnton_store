@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+<div>
+    <div class="login_nav">
+        <img ui-sref="home" src="{{general.picUrl}}"/>
+        <p>{{name}}</p>
+    </div>
+    <div class="login_wrap" style="background: url({{general.loginBackground}}) no-repeat 100%;background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+	height: 550px;">
+        <div class="login_content">
+            <form class="login_case">
+                <ul>
+                    <li style="font-size: 20px;color: black;"><strong>Login</strong>
+                    </li>
+                    <li>
+                        <p><i class="icon iconfont icon-zhanghao"></i></p>
+                        <p>
+                            <span class="mobil_verify"></span>
+                            <input type="text" class="loginAccount" ng-model="account" placeholder="UserName/Phone/Mail"/>
+                        </p>
+                    </li>
+                    <li>
+                        <p><i class="icon iconfont icon-mima01"></i></p>
+                        <p>
+                            <span class="mobil_verify"></span>
+                            <input  class="loginPassword" ng-model="password" type="password"
+                                   placeholder="the length of password need 6-16 number&letter"/>
+                        </p>
+                    </li>
+                    <li>
+                        <p><label><input type="checkbox" ng-model="checkpwd" ng-click="checkpwds()"><i>✓</i></label>Remember</p>
+                    </li>
+                    <li>
+                        <p>
+                            <button ng-click="login()"><strong>Login&nbsp;&nbsp;&nbsp;&nbsp;</strong></button>
+                        </p>
+                    </li>
+                    <li><p><span ui-sref="froget_pwd">forgot password</span>&nbsp;|&nbsp;<span ui-sref="register">Free Regiter</span></p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="promptMessage" hello-world></div>

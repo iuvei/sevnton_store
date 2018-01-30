@@ -1,0 +1,38 @@
+.pay3_content{
+    width: 1080px;
+    margin: auto;
+    padding: 100px;
+    border: 1px solid gainsboro;
+    -webkit-box-shadow: gainsboro 0px 0px 15px;
+    -moz-box-shadow: gainsboro 0px 0px 15px;
+    box-shadow: gainsboro 0px 0px 15px;
+    overflow: hidden;
+}
+.pay3_true{
+    float: left;
+}
+.pay3_right{
+    width: 90%;
+    float: right;
+    font-size: 20px;
+}
+.pay3_right li:first-child{
+    padding-bottom: 40px;
+    border-bottom: 2px dashed gainsboro;
+}
+.pay3_right li:last-child{
+    margin-top: 30px;
+}
+.pay3_right li:last-child p{
+    float: left;
+}
+.pay3_right li:last-child p button{
+    width: 100px;
+    height: 50px;
+    border: 1px solid #44aaf6;
+    border-radius: 5px;
+}
+.pay3_right li:last-child p:last-child{
+    float: right;
+    line-height: 50px;
+}

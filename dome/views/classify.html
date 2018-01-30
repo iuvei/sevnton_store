@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+    <div class="classify_Wrap">
+        <p class="classify_nav"><span ui-sref="home">首页</span> > 全部分类</p>
+        <div class="classify_content">
+            <ul class="nav_location">
+                <li ng-repeat="categor in categoryList" class="nav_location_li" class-ify><i class="icon iconfont icon-zhanghao"></i>{{categor.categoryName}}</li>
+            </ul>
+            <div ng-repeat="categor in categoryList" class="classify_content_class">
+                <p class="class_name"><a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}"><b>{{categor.categoryName}}</b></a></p>
+                <ul class="classify_content_ul">
+                    <li ng-repeat="ChildCategor in categor.categories">
+                        <p><a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{ChildCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{ChildCategor.categoryName}}"><b>{{ChildCategor.categoryName}}</b></a></p>
+                        <p>
+                            <span ng-repeat="ChildCategora in ChildCategor.categories"><a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{ChildCategora.categoryID}}&cType=3&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{ChildCategor.categoryName}}">{{ChildCategora.categoryName}}</a></span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<div ng-include="'views/footer.html'"></div>

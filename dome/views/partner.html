@@ -1,0 +1,11 @@
+<div ng-include="'views/header.html'"></div>
+<div class="partner">
+<h1>合作客户</h1>
+    <div class="">
+        <p class="partner_icon" ng-repeat="partner in partnerList"><a ng-href="{{partner.link}}" target="_blank"><img
+                lazy-src="{{partner.picUrl}}" alt="" title="{{partner.title}}"/></a></p>
+        <div class="clearfloat"></div>
+    </div>
+</div>
+
+<div ng-include="'views/footer.html'"></div>

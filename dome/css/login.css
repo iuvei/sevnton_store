@@ -1,0 +1,106 @@
+.login_nav{
+	height: 125px;
+	/*background: gainsboro;*/
+}
+.login_nav img{
+	width: 120px;
+	/*border: 1px solid red;*/
+	margin: 40px 50px;
+}
+@media only screen and (max-width: 1200px) {
+	.login_wrap{
+	width: 1200px;
+}
+}
+.login_wrap{
+	/*background: url(../img/login_BJ.jpg) no-repeat 100%;
+	background-size: 100% 100%;  
+  -moz-background-size: 100% 100%;  
+  -webkit-background-size: 100% 100%;  	
+	height: 550px;*/
+}
+.login_content{
+	width: 1200px;
+	height: 550px;
+	margin: auto;
+	overflow: hidden;
+}
+.login_case{
+	width: 400px;
+	height: 450px;
+	float: right;
+	background: white;
+	margin: 40px 70px;
+	padding: 30px 20px 20px 20px;
+}
+.login_case li{
+	width: 100%;
+	color: darkgray;
+}
+.login_case li p{
+	display: inline-block;
+	position: relative;
+}
+.login_case li:first-child{
+	position: relative;
+	padding-bottom: 35px;
+	
+}
+.login_case li:first-child p{
+	position: absolute;
+	bottom: 5px;
+	left: 45px;
+	font-size: 12px;
+	color: #e53f3f;
+}.login_case li:nth-child(2),.login_case li:nth-child(4){
+	margin-bottom: 35px;
+}
+.login_case li:nth-child(2),.login_case li:nth-child(3){
+	border: 1px solid gainsboro;
+	position: relative;
+}
+.login_case li:nth-child(2) p:first-child,.login_case li:nth-child(3) p:first-child{
+	background: #e1e1e1;
+	color: white;
+	width: 45px;
+	text-align: center;
+	line-height: 46px;
+	vertical-align: top;
+}
+.login_case li:nth-child(2) p:nth-child(2) input,.login_case li:nth-child(3) p:nth-child(2) input{
+	height: 45px;
+	width: 300px;
+	border: none;
+	font-size: 16px;
+	padding-left: 10px;
+	color: black;
+}
+.login_case li:nth-child(4){
+	margin-top: 10px;
+}
+.login_case li:nth-child(4) p input{
+	float: left;
+	margin-right: 5px;
+}
+.login_case li:nth-child(5){
+	margin-bottom: 50px;
+}
+.login_case li:nth-child(5) p button{
+	width: 360px;
+	height: 45px;
+	font-size: 25px;
+	border: none;
+	color: white;
+	background: #1c91dd;
+}
+.login_case li:last-child p{
+	font-size: 16px;
+	float: right;
+}
+.login_case li:last-child p span{
+	
+	font-size: 14px;
+}
+.login_case li:last-child p span:hover{
+	color: #e56e3f;	
+}

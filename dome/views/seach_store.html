@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<!--<ul class="seach_store_ul1">-->
+    <!--<li class="seach_store_li2">-->
+        <!--<p><b>产品产地:</b></p>-->
+        <!--<p class="store_address">-->
+            <!--<span ng-repeat="supplier in seachstore"><b>{{supplier.province}}</b>(20)</span>-->
+        <!--</p>-->
+        <!--<p class="store_gengduo"><span>更多<i class="icon iconfont icon-xiajiantou"></i></span></p>-->
+    <!--</li>-->
+<!--</ul>-->
+    <ul ng-repeat="supplier in seachstore" class="store_content">
+        <li class="store_content_li1">
+            <p style="margin-bottom: 13px;"><a style="color: #1d7abf;" href="{{URL_ID}}supplier?supplid={{supplier.supplierID}}"><b>{{supplier.supplierName}}</b></a></p>
+            <p>Seller:{{supplier.contacts}} <i class="icon iconfont icon-lianxiwomen"></i></p>
+            <p>Major Business: {{supplier.description}}</p>
+            <p>Address:{{supplier.province}}{{supplier.city}}{{supplier.district}}{{supplier.address}}</p>
+            <p>Trades({{supplier.suppItemSize}})</p>
+        </li>
+        <li class="store_content_li2">
+            <p class="zuoyou li2zuo" data="0" zuo-li><b><i class="icon iconfont icon-zuoyoujiantou1"></i></b></p>
+            <p class="zuoyou li2you" data="0" you-li><b><i class="icon iconfont icon-zuoyoujiantou2"></i></b></p>
+            <div class="store_content_li22">
+                <p class="store_content_li_P" ng-repeat="items in supplier.itemList" >
+                    <a ng-href="{{URL_ID}}/xiangqing?itemID={{items.itemID}}" target="_blank">
+                        <img ng-src="{{items.picUrl}}" alt="">
+                        <span title="{{items.itemName}}">{{items.itemName}}</span>
+                    </a>
+                </p>
+                <div class="clearfloat"></div>
+            </div>
+        </li>
+    </ul>

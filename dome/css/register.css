@@ -1,0 +1,126 @@
+.register_nav{
+	width: 100%;
+	height: 125px;
+	border-bottom: 3px solid #44aaf6;
+	overflow: hidden;
+}
+.register_nav img{
+	width: 120px;
+	margin: 40px 50px;
+	float: left;
+}
+.register_nav span{
+	display: inline-block;
+	font-size: 25px;
+	padding-top: 60px;
+}
+@media only screen and (max-width: 1200px) {
+	.register_nav{
+	width: 1200px;
+}
+}
+.register_wrap{
+	width: 1200px;
+	margin: auto;
+	padding: 80px;
+	overflow: hidden;
+}
+.register_content{
+	width: 700px;
+	font-size: 16px;
+	float: left;
+}
+.register_content ul{
+
+	border-right: 1px solid gainsboro;
+	margin: auto;
+	margin-bottom: 30px;
+}
+.register_content ul li{
+	height: 60px;
+}
+.register_content ul li:first-child select{
+	width: 360px;
+	height: 35px;
+	padding: 0 0 0 10px;
+	border-radius: 5px;
+	border: 1px solid gainsboro;
+}
+.register_content ul li:first-child select option{
+	height: 20px;
+}
+.register_content ul li p{
+	display: inline-block;
+	position: relative;
+}
+.register_content ul li p:first-child{
+	width: 25%;
+	text-align: right;
+	padding-right: 20px;
+}
+.register_content ul li input{
+	outline: none;
+	width: 360px;
+	height: 35px;
+	border: 1px solid gainsboro;
+	padding: 0 10px;
+	border-radius: 3px;
+}
+.register_content ul li:last-child input{
+	width: 100px;
+}
+.register_content ul li:last-child p:last-child{
+	border: 1px solid gainsboro;
+	height: 35px;
+	width: 100px;
+	line-height: 35px;
+	padding: 4px;
+	margin-left: 20px;
+}
+.register_content ul li:last-child p:last-child input{
+	display: block;
+	width: 70px;
+	background-color: #f2f5fe;
+	height: 27px;
+	font-size: 16px;
+}
+.button{
+	display: block;
+	width: 300px;
+	height: 40px;
+	background: #44aaf6;
+	border: none;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	margin: auto;
+}
+.register_right{
+	width: 338px;
+	padding: 20px 50px 50px 54px;
+	/*border: 1px solid red;*/
+	float: right;
+}
+.register_right ul{
+	border-top: 1px solid gainsboro;
+	padding: 10px;
+}
+.register_right ul li:first-child p {
+	line-height: 25px;
+}
+.register_right ul li:first-child p a{
+	color: #65c5e9;
+	cursor: pointer;
+}
+.register_right ul li:last-child{
+	border: 1px solid gainsboro;
+	margin-top: 30px;
+}
+.register_right ul li:last-child p{
+	border-bottom: 1px dashed gainsboro;
+	line-height: 25px;
+	padding: 0 5px;
+}
+.register_right ul li:last-child p:first-child{
+	border-bottom: 1px solid gainsboro;
+}

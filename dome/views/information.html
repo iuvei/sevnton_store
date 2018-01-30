@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+    <div class="inform_ation">
+        <div class="inform_header">
+            <p><b>资讯&nbsp;NEWS</b></p>
+            <p><span>新鲜资讯每日精选</span></p>
+        </div>
+        <div class="inform_content">
+            <div class="inform_content_left">
+                <p style="margin: 10px 0;"><b>资讯</b></p>
+                <ul>
+                    <li>卖家入口</li>
+                    <li>行业趋势</li>
+                    <li>店铺运营</li>
+                    <li>物流宝典</li>
+                </ul>
+            </div>
+            <div class="inform_content_right">
+                <table>
+                    <tr >
+                        <td ng-repeat="contentConsult in contentConsults">
+                            <p class="inform_content_right_img"><img src="img/TC2.png" alt="" title="小图片"></p>
+                            <ul class="inform_content_right_ul">
+                                <li><b>{{contentConsult.categoryName}}</b></li>
+                                <li>来源 : <span>赵又廷</span><span>2016-2-13</span></li>
+                                <li>
+                                    <i class="icon iconfont icon-font47" style="font-size: 18px;color: darkgray"></i>
+                                    <span>阅读(<a class="yuedu_num">480</a>)</span>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <div class="inform_paging">
+                    <p ng-click="previous()"><i class="icon iconfont icon-zuo1" style="font-size: 16px;color: darkgray"></i>上一页</p>
+                    <p>共[{{page.totalCount}}]条记录，当前[{{page.pageNo}}/{{page.pageCount}}]页</p>
+                    <p ng-click="next()">下一页<i class="icon iconfont icon-you" style="font-size: 16px;color: darkgray"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<div ng-include="'views/footer.html'"></div>

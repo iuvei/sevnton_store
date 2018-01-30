@@ -1,0 +1,150 @@
+<meta charset="utf-8">
+<div style="border-bottom: 1px solid gainsboro;margin-bottom: 20px">
+    <nav>
+        <div class='nav'>
+            <p>
+                <span data="AutiLive" ng-click="accountLive($event.target)">{{gData.user}}</span>
+                <span class="logout" ng-show="gData.logout" ng-click="gData.Logout()">Logout</span>
+                <span ui-sref="register">Free Regiter</span>
+            </p>
+            <ul>
+                <li ui-sref="login">Supplier</li>
+                <li>Navigation;</li>
+                <li>Language</li>
+                <li ui-sref="helpCenter">Help</li>
+            </ul>
+        </div>
+    </nav>
+    <div class='header'>
+        <div class='index_header'>
+            <div class='logo1'>
+                <a ui-sref="home"><img src='{{commData.picUrl}}'/></a>
+            </div>
+            <div ng-if="headerIS == '0'">
+                <ul class='seach'>
+                    <li style='border-right: 1px solid gainsboro;position: relative;'>
+                        <select class="seach_select" ng-model="seles">
+                            <option value="Item">Item</option>
+                            <option value="Shop">Shop</option>
+                        </select>
+                        <img style="position: absolute;right: 8px;top: 18px;" src="img/XZ10.png" alt="">
+                    </li>
+                    <li><input type='text' ng-model="seach_value" placeholder='Plz input {{seles}} keyword'/></li>
+                    <a ng-if="seles == 'Item'"
+                       ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID=&categoryID=&cType=&ordercondition=&type=&start=&end=&style={{styles}}">
+                        <li class="seach_li3"><span
+                                style='color: white;'>Search<img src='img/seach.png' alt=''/></span></li>
+                    </a>
+                    <a ng-if="seles == 'Shop'" ng-href="{{URL_ID}}/seach/store?keyword={{seach_value}}">
+                        <li class="seach_li3"><span
+                                style='color: white;'>Search<img src='img/seach.png' alt=''/></span></li>
+                    </a>
+                    <div ng-if="path != '/home'&&path != '/classify'&&path != '/shopping_cart'" class='seach_Menu'
+                         ng-click="toggleseachMenu()">
+                        <span class='glyphicon glyphicon-menu-hamburger'></span><span
+                            class='glyphicon glyphicon-triangle-bottom'></span>
+                        <div ng-if="seachMenu" class="seach_Menucontent">
+                            <ul class="seach_Menucontent_ul">
+                                <li ng-repeat="categor in categoryList">
+                                    <a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}">{{categor.categoryName}}</a>
+                                </li>
+                                <li ng-repeat="categor in categoryList">
+                                    <a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}">{{categor.categoryName}}</a>
+                                </li>
+                                <li ng-repeat="categor in categoryList">
+                                    <a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}">{{categor.categoryName}}</a>
+                                </li>
+                                <div class="clearfloat"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+                <div class='index_header_right'>
+                    <div code="{{gData.code}}" data="GRZX" ng-click="accountLive($event.target)">
+                        <img data="GRZX" src='img/GRZX.png' alt=''/>
+                        <p data="GRZX">Personal Center</p>
+                    </div>
+                    <div ng-if="path != '/shopping_cart'" data="GWC" code="{{gData.code}}"
+                         ng-click="accountLive($event.target)">
+                        <img data="GWC" src='img/shopp_cart.png' alt=''/>
+                        <p data="GWC">ShoppingCart</p>
+                        <p data="GWC" class="GWC GWC1">{{cartIDs}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="index_header2" ng-if="headerIS == '1'">
+                <ul>
+                    <li ng-if="path != '/paytwo'">
+                        <p style="font-size: 30px;color: #004579;">{{headerH1}}</p>
+                        <p class="index_header2_stroe"><a ng-href="{{URL_ID}}/home">Back To Index</a></p>
+                    </li>
+                    <li ng-if="path == '/paytwo'">
+                        <p style="font-size: 30px;margin: 0 20px 0 -20px;color: darkgray;">|</p>
+                        <p style="font-size: 25px;color: darkgray;">Cashier Desk</p>
+                    </li>
+                    <li ng-if="path != '/helpCenter'&&path != '/paytwo'">
+                        <p class="index_header2s index_header2_seach">
+                            <input type="text" ng-model="seach_value" placeholder="请输入商品关键字"><a
+                                ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID=&categoryID=&cType=&ordercondition=&type=&start=&end=&style={{styles}}"><span>Search</span></a>
+                        </p>
+                        <p class="index_header2s index_header2_GWC" data="GWC" ng-click="accountLive($event.target)">
+                            <i style="color: #44aaf6;font-size: 18px" data="GWC"
+                               class="icon iconfont icon-gouwuchekong">
+                            </i>&nbsp;ShoppingCart&nbsp;<span data="GWC" class="GWC GWC2">{{cartIDs}}</span>
+                        </p>
+                    </li>
+                    <li ng-if="path == '/helpCenter'">
+                        <div class="index_header2s" code="{{gData.code}}" data="GRZX"
+                             ng-click="accountLive($event.target)">
+                            <img data="GRZX" src='img/GRZX.png' alt=''/>
+                            <p data="GRZX" style="line-height: 35px">Personal Center</p>
+                        </div>
+                        <div class="index_header2s" style="position: relative;margin:0 40px 0 30px;text-align: center"
+                             data="GWC" code="{{gData.code}}" ng-click="accountLive($event.target)">
+                            <img data="GWC" src='img/shopp_cart.png' alt=''/>
+                            <p data="GWC" style="line-height: 35px">ShoppingCart</p>
+                            <p data="GWC" class="GWC GWC1">{{cartIDs}}</p>
+                        </div>
+                    </li>
+                    <li ng-if="path == '/paytwo'">
+                        <p style="font-size: 20px;color: darkgray;margin-right: 60px;"><i
+                                style="font-size: 30px;color: darkgray;" class="icon iconfont icon-666"></i>&nbsp;&nbsp;Contact
+                            Helper</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfloat"></div>
+            <ul class="header_footer" ng-if="path == '/home'||path == '/classify'">
+                <!--ng-mouseenter="menuMainDown()" ng-mouseleave="menuMainUp()"-->
+                <li class="this_none" ng-mouseenter="menuMainDown()" ng-mouseleave="menuMainUp()"><p>商品类别&nbsp;&nbsp;<i class="icon iconfont icon-icon all_MenuIcon" style="font-size: 18px"></i></p>
+                    <div class="kind_left">
+                        <ul class="kind_left_ul">
+                            <li ng-repeat="categor in categoryList | limitTo:8"
+                                ng-mouseover='getChild(categor.categoryID,categor.categoryName)'>
+                                <a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}">{{categor.categoryName}}</a>
+                                <i class="icon iconfont icon-zuoyoujiantou2 menu_youjiantou"></i>
+                            </li>
+                            <li><a ng-href="{{URL_ID}}/classify" target="_blank">All Category</a></li>
+                        </ul>
+                        <div ng-show="bler" class="kind_left_cont">
+                            <ul ng-repeat="childCategor in categoryListChild">
+                                <li><a
+                                        href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{childCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{cateName}}&type2name={{childCategor.categoryName}}">{{childCategor.categoryName}}
+                                    : </a></li>
+                                <li ng-repeat="secondChildCategor in childCategor.categories">
+                                    <a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secondChildCategor.categoryID}}&cType=3&ordercondition=&type=&start=&end=&style={{styles}}&&type1name={{cateName}}&type2name={{childCategor.categoryName}}">{{secondChildCategor.categoryName}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfloat"></div>
+                </li>
+                <li ui-sref="home">首页</li>
+            </ul>
+        </div>
+        <div class="clearfloat"></div>
+
+    </div>
+    <div class="promptMessage" hello-world></div>
+</div>

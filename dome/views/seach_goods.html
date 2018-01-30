@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<ul class="seach_content_center_ul1">
+    <li style="overflow: hidden">
+        <p style="width: 10%;float: left">Brand:</p>
+        <p style="width: 90%;float: left"><a ng-repeat="brand in brandList" ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID={{brand.brandID}}&categoryID={{categoryID}}&cType={{cType}}&ordercondition={{ordercondition}}&type={{type}}&start={{start}}&end={{end}}&supplierID={{supplierID}}&style={{styles}}&type1name={{type1names}}&type2name={{type2names}}"><img style="width: 80px;height: 40px;border: 1px solid gainsboro;border-radius: 3px;margin: 5px" src="{{brand.picUrl}}" alt="" /></a></p>
+    </li>
+    <li class="pice_section">
+        <p style="line-height: 38px">Price:</p>
+        <p class="picshow">
+            <input type="text" ng-model="start"/>
+            <span>—</span>
+            <input type="text" ng-model="end"/>
+            <a ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID={{brandID}}&categoryID={{categoryID}}&cType={{cType}}&ordercondition={{ordercondition}}&type={{type}}&start={{start}}&end={{end}}&supplierID={{supplierID}}&style={{styles}}&type1name={{type1names}}&type2name={{type2names}}"><button class="pichide"><b>OK</b></button></a>
+        </p>
+    </li>
+    <li >
+        <p>Sort Type:</p>
+        <p>
+            <span ng-click="default()">Default</span>
+            <span ng-if="bol == true" ng-click="Sales()">High Sales</span>
+            <span ng-if="bol != true" ng-click="Sales()">Low Sales</span>
+            <span ng-if="bol1 == true" ng-click="price()" style="border-right: none;">High Price</span>
+            <span ng-if="bol1 != true" ng-click="price()" style="border-right: none;">Low Price</span>
+        </p>
+        <p style="margin-left: 80px">Show Style</p>
+        <p>
+            <a ng-if="styles == 'list'" ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID={{brandID}}&categoryID={{categoryID}}&cType={{cType}}&ordercondition={{ordercondition}}&type={{type}}&start={{start}}&end={{end}}&supplierID={{supplierID}}&style=list&type1name={{type1names}}&type2name={{type2names}}"><span class="glyphicon glyphicon-th-list colorsss"></span></a>
+            <a ng-if="styles == 'grid'" ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID={{brandID}}&categoryID={{categoryID}}&cType={{cType}}&ordercondition={{ordercondition}}&type={{type}}&start={{start}}&end={{end}}&supplierID={{supplierID}}&style=list&type1name={{type1names}}&type2name={{type2names}}"><span class="glyphicon glyphicon-th-list colorsss1"></span></a>
+            <a ng-if="styles == 'grid'" ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID={{brandID}}&categoryID={{categoryID}}&cType={{cType}}&ordercondition={{ordercondition}}&type={{type}}&start={{start}}&end={{end}}&supplierID={{supplierID}}&style=grid&type1name={{type1names}}&type2name={{type2names}}"><span class="glyphicon glyphicon-th-large colorsss"></span></a>
+            <a ng-if="styles == 'list'" ng-href="{{URL_ID}}/seach/goods?keyword={{seach_value}}&brandID={{brandID}}&categoryID={{categoryID}}&cType={{cType}}&ordercondition={{ordercondition}}&type={{type}}&start={{start}}&end={{end}}&supplierID={{supplierID}}&style=grid&type1name={{type1names}}&type2name={{type2names}}"><span class="glyphicon glyphicon-th-large colorsss1"></span></a>
+        </p>
+    </li>
+</ul>
+<div ng-if="styles == 'list'" class="seach_content_center_main" ng-repeat="searhItem in searhItemList">
+    <ul>
+        <li>
+            <a href="{{URL_ID}}xiangqing?itemID={{searhItem.itemID}}">
+                <img lazy-src="{{searhItem.picUrl}}" alt="">
+            </a>
+            <p><a>Sales({{searhItem.totalSales}})</a> <a>Favs({{searhItem.totalSales}})</a></p>
+        </li>
+        <li>
+            <p><a href="{{URL_ID}}xiangqing?itemID={{searhItem.itemID}}" title="{{searhItem.itemName}}">{{searhItem.itemName}}</a></p><p>{{searhItem.skuList[0].marketPrice|currency}}~{{searhItem.skuList[0].salesPrice|currency}}</p>
+            <p></p><p style="color:  #44aaf6;">
+            <img style="margin-right: 10px;" src="img/seach/leave.png">Contact Seller</p>
+            <a ng-click="addFav(searhItem.itemID)">Add Fav</a>
+        </li>
+        <li><p><a ng-href="{{URL_ID}}supplier?supplid={{searhItem.supplierID}}">{{searhItem.supplierName}}</a></p><p>
+            <a ng-href="{{URL_ID}}supplier?supplid={{searhItem.supplierID}}" style="color: #44aaf6">Go Shop</a></p></li>
+    </ul>
+</div>
+<div ng-if="styles == 'grid'" class="seach_content_center_main1" ng-repeat="searhItem in searhItemList">
+    <ul>
+        <li>
+            <a href="{{URL_ID}}xiangqing?itemID={{searhItem.itemID}}">
+                <img lazy-src="{{searhItem.picUrl}}" alt="">
+            </a>
+            <p><a>Sales({{searhItem.totalSales}})</a> <a>Favs({{searhItem.totalSales}})</a></p>
+        </li>
+        <li class="messgoods">
+            <p><a href="{{URL_ID}}xiangqing?itemID={{searhItem.itemID}}" title="{{searhItem.itemName}}" >{{searhItem.itemName}}</a></p>
+            <p style="float: left">{{searhItem.skuList[0].marketPrice|currency}}~{{searhItem.skuList[0].salesPrice|currency}}</p>
+            <p style="float: right;text-align: right"><a ng-click="addFav(searhItem.itemID)">Add Fav</a></p>
+            <p style="color:  #44aaf6;float: left"><img style="margin-right: 10px;" src="img/seach/leave.png">Contact Seller</p>
+            <p style="float: right;text-align: right"><a ng-href="{{URL_ID}}supplier?supplid={{searhItem.supplierID}}">{{searhItem.supplierName}}</a></p>
+        </li>
+    </ul>
+</div>

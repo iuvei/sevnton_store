@@ -1,0 +1,76 @@
+.classify_nav{
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+.classify_content{
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+.classify_content1{
+    padding-top: 190px;
+}
+.nav_location{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 80px;
+}
+.nav_location1{
+    position: fixed;
+    width: 1160px;
+    top: 0;
+    background: white;
+}
+.nav_location li{
+    width: 16.66%;
+    height: 80px;
+    border: 1px solid gainsboro;
+    float: left;
+    font-size: 20px;
+    border-right: none;
+    cursor: pointer;
+}
+.nav_location_li1{
+    color: #44aaf6 !important;
+    border: 1px solid #44aaf6 !important;
+}
+.nav_location li:nth-child(n+7){
+    border-top: none;
+}
+.nav_location li:nth-child(6n),.nav_location li:last-child{
+    border-right: 1px solid gainsboro;
+}
+.classify_content_class{
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.class_name{
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+}
+.classify_content_ul{
+    overflow: hidden;
+}
+.classify_content_ul li{
+    width: 33%;
+    float: left;
+    margin: 10px 0;
+}
+.classify_content_ul li p:first-child{
+    width: 20%;
+    float: left;
+}
+.classify_content_ul li p:last-child{
+    float: right;
+    width: 80%;
+}
+.classify_content_ul li p:last-child span{
+    display: inline-block;
+    width: 20%;
+    line-height: 25px;
+}

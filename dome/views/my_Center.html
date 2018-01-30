@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+<div class="my_Center_wrap">
+    <div class="my_Center_left">
+        <ul class="my_accountCentre">
+            <li><b>Account Info</b></li>
+            <li ui-sref=".address" ng-if="path != '/my_Center/address'">Recive Address</li>
+            <li ui-sref=".address" ng-if="path == '/my_Center/address'" class="my_WRAP"><b>Recive Address</b></li>
+            <li ui-sref=".personalData" ng-if="path != '/my_Center/personalData'">Personal Info</li>
+            <li ui-sref=".personalData" ng-if="path == '/my_Center/personalData'" class="my_WRAP"><b>Personal Info</b></li>
+            <li ui-sref=".scurity" ng-if="path !='/my_Center/scurity'">Security Setting</li>
+            <li ui-sref=".scurity" ng-if="path == '/my_Center/scurity'" class="my_WRAP"><b>Security Setting</b></li>
+            <li ui-sref=".bindAccount" ng-if="path !='/my_Center/bindAccount'">Account Binding</li>
+            <li ui-sref=".bindAccount" ng-if="path == '/my_Center/bindAccount'" class="my_WRAP"><b>Account Binding</b></li>
+            <li ui-sref=".messageReminder" ng-if="path != '/my_Center/messageReminder'">Messages Setting</li>
+            <li ui-sref=".messageReminder" ng-if="path == '/my_Center/messageReminder'" class="my_WRAP"><b>Messages Setting</b></li>
+        </ul>
+        <ul class="my_orderCentre">
+            <li><b>Orders Center</b></li>
+            <a ng-href="{{URL_ID}}/my_Center/order?statu="><li ng-if="path != '/my_Center/order'">My Orders</li></a>
+            <a ng-href="{{URL_ID}}/my_Center/order?statu="><li ng-if="path == '/my_Center/order'" class="my_WRAP"><b>My Orders</b></li></a>
+        </ul>
+        <ul class="my_collectCentre">
+            <li><b>Favorite Center</b></li>
+            <li ui-sref=".houseGoods" ng-if="path != '/my_Center/houseGoods'">Items</li>
+            <li ui-sref=".houseGoods" ng-if="path == '/my_Center/houseGoods'" class="my_WRAP"><b>Items</b></li>
+            <li ui-sref=".houseShop" ng-if="path != '/my_Center/houseShop'">Shops</li>
+            <li ui-sref=".houseShop" ng-if="path == '/my_Center/houseShop'" class="my_WRAP"><b>Shops</b></li>
+            <li ui-sref=".browHistory" ng-if="path != '/my_Center/browHistory'">History</li>
+            <li ui-sref=".browHistory" ng-if="path == '/my_Center/browHistory'" class="my_WRAP"><b>History</b></li>
+        </ul>
+    </div>
+    <div class="my_Center_right" ui-view=""></div>
+</div>
+<div ng-include="'views/footer.html'"></div>

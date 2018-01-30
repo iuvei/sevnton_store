@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<div class="houseShop">
+    <div class="houseShop_header">
+        <ul>
+            <li>
+                <p class="Goods_header2">Item</p>
+                <span>|</span>
+                <p>Similar Item</p>
+            </li>
+            <li>
+                <p>
+                    <input type="text">
+                    <span><i class="icon iconfont icon-sousuo_sousuo"></i></span>
+                </p>
+                <p style="padding: 0 10px">Batch Manage</p>
+            </li>
+        </ul>
+    </div>
+    <div class="houseShop_content">
+        <ul class="Goods_content" style="margin-bottom: 40px">
+            <li ng-repeat="favouriteItem in favouriteList">
+                <p>
+                    <i class="icon iconfont icon-shanchu" ng-click="deleteFav(favouriteItem.itemID)"></i>
+                    <a ng-href="{{URL_ID}}/xiangqing?itemID={{favouriteItem.itemID}}" target="_blank">
+                        <img lazy-src="{{favouriteItem.picUrl}}" alt="">
+                        <span title="{{favouriteItem.itemName}}">{{favouriteItem.itemName}}</span>
+                    </a>
+                </p>
+                <p><b style="color: #aa2828;">{{favouriteItem.skuList[0].salesPrice|currency}}</b></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="order_paging">
+    <p ng-click="previous()"><i class="icon iconfont icon-zuo1" style="font-size: 16px;color: darkgray"></i>Previous</p>
+    <p>[{{page.totalCount}}] ，[{{page.pageNo}}/{{page.pageCount}}]</p>
+    <p ng-click="next()">Next<i class="icon iconfont icon-you" style="font-size: 16px;color: darkgray"></i></p>
+</div>

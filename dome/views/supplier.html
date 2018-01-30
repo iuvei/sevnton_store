@@ -1,0 +1,83 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+<div class="supplier">
+    <div class="supplier_header">
+        <img style="height: 80px;margin-top: 5px;width: 100%" src="{{suppliers.supplierPic}}" alt="">
+    </div>
+    <div class="supplier_nav">
+        <p class="sup1_nav">Index</p>
+        <p class="sup2_nav">Products:</p>
+    </div>
+    <div ng-if="suppliers.bannerPicList.length>0" id="myCarousel" class="carousel slide supplier_banners">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" ng-repeat="banner in suppliers.bannerPicList" data-slide-to="{{$index}}" ng-class="{'0':'active'}[$index]"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div ng-repeat="banner in suppliers.bannerPicList" class="item" ng-class="{'0':'active'}[$index]">
+                <a href="{{banner.link}}" target="_blank">
+                    <img src="{{banner.picUrl}}" alt="First slide"></a>
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" data-target="#myCarousel" data-slide="prev"><i
+                class="icon iconfont icon-lunbobanner-zuoyoujiantou- ZUO"></i></a>
+        <a class="carousel-control right" data-target="#myCarousel" data-slide="next"><i
+                class="icon iconfont icon-lunbobanner-zuoyoujiantou-1 YOU"></i></a>
+    </div>
+    <div class="clearfloat"></div>
+    <div class="company_message">
+        <ul>
+            <li ng-if="suppliers.logo!=null"  class="cmpy_left">
+                <img ng-src="{{suppliers.logo}}" alt="">
+            </li>
+            <li class="cmpy_center">
+                <p class="cmpy_center_nav">
+                    <span class="cmpy_center_nav1">Company Info</span>
+                    <!--<span>公司简介</span>-->
+                </p>
+                <p class="cmpy_center_mes">Company Name:&nbsp;&nbsp;{{suppliers.supplierName}}</p>
+                <p class="cmpy_center_mes">Main products:&nbsp;&nbsp;{{supplier.description}}</p>
+                <p class="cmpy_center_mes">Company Address&nbsp;&nbsp;{{suppliers.province}}{{suppliers.city}}{{suppliers.district}}{{suppliers.address}}</p>
+                <p class="cmpy_center_mes"><span>products:({{suppliers.itemList.length}})</span></p>
+                <p class="cmpy_center_mes1">{{suppliers.description}}</p>
+            </li>
+            <li class="cmpy_rigt">
+                <p>
+                    <img  ng-if="suppliers.logo!=null" ng-src="{{suppliers.logo}}" alt="">
+                    <span>{{suppliers.contacts}}</span>
+                </p>
+                <p>
+                    <button><i class="icon iconfont icon-lianxiwomen" style="color: #44aaf6;font-size: 16px "></i>&nbsp;&nbsp;Contact Seller</button>
+                </p>
+                <p>
+                    <button ng-click="favSupplier()"><i class="icon iconfont icon-shoucang1" style="color: gainsboro; font-size: 16px"></i>&nbsp;&nbsp;Favorite Items</button>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="supplier_goods">
+        <p style="width: 100%;font-size: 25px;border-bottom: 1px solid gainsboro;margin: 60px 0 20px 0;padding: 0 20px"><strong>Shop's　Item</strong></p>
+        <ul>
+            <li ng-repeat="item in suppliers.itemList | limitTo: limits" >
+                <a ng-href="{{URL_ID}}/xiangqing?itemID={{item.itemID}}">
+                    <img lazy-src="{{item.picUrl}}" alt="">
+                    <p title="{{item.itemName}}">{{item.itemName}}</p>
+                </a>
+            </li>
+        </ul>
+        <p class="offOn" ng-click="clic_limits()" ng-if="limits != shul">Show More >></p>
+        <p class="offOn" ng-click="isclic_limits()" ng-if="limits == shul">Retract >></p>
+    </div>
+    <div ng-if="false" class="company_show">
+        <p style="width: 100%;font-size: 25px;border-bottom: 1px solid gainsboro;margin: 60px 0 20px 0;padding: 0 20px"><strong>公司展示</strong></p>
+        <ul>
+            <li>
+                <img src="img/TC5.png" alt="">
+                <p title="">富家大室</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div ng-include="'views/footer.html'"></div>

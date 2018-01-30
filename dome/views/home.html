@@ -1,0 +1,152 @@
+<meta charset="utf-8">
+<title>Index</title>
+<div ng-include="'views/header.html'"></div>
+<div id="myCarousel" class="carousel slide home_banners">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" ng-repeat="banner in banners" data-slide-to="{{$index}}" ng-class="{'0':'active'}[$index]"></li>
+    </ol>
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div ng-repeat="banner in banners" class="item" ng-class="{'0':'active'}[$index]">
+            <a href="{{banner.link}}" target="_blank">
+                <img src="{{banner.picUrl}}" alt="First slide"></a>
+        </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" data-target="#myCarousel" data-slide="prev"><i
+            class="icon iconfont icon-lunbobanner-zuoyoujiantou- ZUO"></i></a>
+    <a class="carousel-control right" data-target="#myCarousel" data-slide="next"><i
+            class="icon iconfont icon-lunbobanner-zuoyoujiantou-1 YOU"></i></a>
+</div>
+<div class="clearfloat"></div>
+<div class="Kind">
+    <div class="kind">
+        <!--<div class="kind_left" ng-mouseleave="hid()">-->
+            <!--<ul class="kind_left_ul">-->
+                <!--<li ng-repeat="categor in categoryList"-->
+                    <!--ng-mouseover='getChild(categor.categoryID,categor.categoryName)'>-->
+                    <!--<a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}"><b>{{categor.categoryName}}</b></a>-->
+                    <!--<span class="glyphicon glyphicon-menu-right"></span><br/>-->
+                    <!--<p style="margin: 0;padding-left: 20px;">-->
+                        <!--<a ng-repeat="secChildCategor in categor.categories | limitTo:2"-->
+                           <!--href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secChildCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{secChildCategor.categoryName}}">{{secChildCategor.categoryName}}</a>-->
+                    <!--</p>-->
+                <!--</li>-->
+                <!--<li><a ng-href="{{URL_ID}}/classify" target="_blank">All Category</a></li>-->
+            <!--</ul>-->
+            <!--<div ng-show="bler" class="kind_left_cont">-->
+                <!--<ul ng-repeat="childCategor in categoryListChild">-->
+                    <!--<li><strong><a-->
+                            <!--href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{childCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{cateName}}&type2name={{childCategor.categoryName}}">{{childCategor.categoryName}}-->
+                        <!--: </a></strong></li>-->
+                    <!--<li ng-repeat="secondChildCategor in childCategor.categories">-->
+                        <!--<a href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secondChildCategor.categoryID}}&cType=3&ordercondition=&type=&start=&end=&style={{styles}}&&type1name={{cateName}}&type2name={{childCategor.categoryName}}">{{secondChildCategor.categoryName}}</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <p class="H0" style="padding: 40px 0px 20px 50px;">Hotter Items</p>
+        <section class="home_section" ng-mouseenter="offInterval()" ng-mouseleave="onInterval()">
+            <div class="section_ul">
+                <ul class="sect_ul">
+                    <li ng-repeat="item in itemList"><a ng-href="{{URL_ID}}/xiangqing?itemID={{item.itemID}}"
+                                                        target="_blank"><img ng-src="{{item.picUrl}}" alt=""/></a>
+                        <p title="{{item.itemName}}">{{item.itemName}}</p><span
+                                ng-repeat="sku in item.skuList">US {{sku.marketPrice|currency}}&nbsp;-&nbsp;{{sku.salesPrice|currency}}</span>
+                    </li>
+                </ul>
+            </div>
+            <img class="next" src="img/next.png" alt="" ng-click="last()"/>
+            <img class="last" src="img/last.png" alt="" ng-click="next()"/>
+        </section>
+        <!--<div class="ZJ_cuxiao">-->
+        <!--<p class="H0" style="padding: 30px 0 10px 0;">最近促销</p>-->
+        <!--<p style="font-size: 18px;float: right;">查看所有商品 >> </p>-->
+        <!--<ul>-->
+        <!--<li>正在抢购</li>-->
+        <!--<li>即将开放</li>-->
+        <!--<li>已将结束</li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="ZJ_content">-->
+        <!--<div class="ZJ_left">-->
+        <!--<img src="img/图层4.png" alt=""/>-->
+        <!--<p style="color: #aa2828;font-weight: bold;font-size: 22px;margin-top: 15px;">¥ 1299.00 - 1399.00</p>-->
+        <!--<p style="font-size: 18px;">Apple MacBook Pro 13.3英寸笔记本电脑</p>-->
+        <!--<p style="font-size: 18px;">剩余时间 10：22：49</p>-->
+        <!--</div>-->
+        <!--<div class="ZJ_right">-->
+        <!--<ul>-->
+        <!--<li><img src="img/TC3.png" alt=""/></li>-->
+        <!--<li><img src="img/TC5.png" alt=""/></li>-->
+        <!--<li><img src="img/TC3.png" alt=""/></li>-->
+        <!--<li><img src="img/TC3.png" alt=""/></li>-->
+        <!--<li><img src="img/TC5.png" alt=""/></li>-->
+        <!--<li><img src="img/TC3.png" alt=""/></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <p class="H0" style="padding: 50px 0 10px 50px;">Recommend Item</p>
+        <div class="TJ_shangpin" ng-repeat="recommend in recommends">
+            <a href="{{URL_ID}}/xiangqing?itemID={{recommend.itemID}}" target="_blank">
+                <div class="TJ_left">
+                    <p style="font-size: 18px; font-weight: bold;">{{recommend.subTitle}}</p>
+                    <ul>
+                        <li><span>Brand</span>
+                            <p>{{recommend.brandID}}</p>
+                        </li>
+                        <li><span>Place Of Origin：</span>
+                            <p></p>
+                        </li>
+                    </ul>
+                    <button>Go Buy Now</button>
+                </div>
+                <div class="TJ_right">
+                    <ul>
+                        <li style="border: none;"><img style="height: 350px; border: 1px solid gainsboro"
+                                                       lazy-src="{{recommend.picUrl}}" alt=""/></li>
+                        <li><img style="height: 190px;margin-top: 80px;" lazy-src="{{recommend.picUrl}}" alt=""/></li>
+                        <li><img style="height: 190px;margin-top: 80px;" lazy-src="{{recommend.picUrl}}" alt=""/></li>
+                    </ul>
+                </div>
+            </a>
+            <div class="clearfloat"></div>
+        </div>
+        <div>
+            <div class="ZX_left">
+                <p>Infomation <span ui-sref="information">More >></span></p>
+                <div>
+                    <ul ng-repeat="contentConsult in contentConsults">
+                        <li>
+                            <strong title="{{contentConsult.categoryName}}">{{contentConsult.categoryName| cut:true:13:'...'}}</strong>
+                            <p title="{{contentConsult.description}}">{{contentConsult.description| cut:true:25:'...'}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="DT_right">
+                <p>New Trades</p>
+                <ul>
+                    <li>
+                        <span>From</span>
+                        <span>Total Fee</span>
+                        <span>Status</span>
+                    </li>
+                    <li ng-repeat="trade in tradeList">
+                        <span>{{trade.province}}</span>
+                        <span>$ {{trade.totalAmount}}</span>
+                        <span><img src="img/XZ8.png"/>{{trade.statusString}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfloat"></div>
+        </div>
+        <div class="H0" style="padding: 20px 0 10px 0; width: 100%"><span>Partners</span> <span ui-sref="partner" style="float: right;font-size: 16px;font-weight: normal;cursor: pointer">More >></span></div>
+        <ul class="HZ_hb">
+            <li ng-repeat="partner in partnerList | limitTo:4"><a ng-href="{{partner.link}}" target="_blank"><img
+                    lazy-src="{{partner.picUrl}}" alt="" title="{{partner.title}}"/></a></li>
+        </ul>
+    </div>
+</div>
+<div ng-include="'views/footer.html'"></div>

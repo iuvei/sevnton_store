@@ -1,0 +1,103 @@
+.pay2_content{
+    width: 1080px;
+    margin: auto;
+    border: 1px solid gainsboro;
+    padding: 30px 30px;
+    background: white;
+    -webkit-box-shadow: gainsboro 0px 0px 15px;
+    -moz-box-shadow: gainsboro 0px 0px 15px;
+    box-shadow: gainsboro 0px 0px 15px;
+}
+.pay2_nav{
+    border-bottom: 1px solid gainsboro;
+}
+.pay2_checkS{
+    overflow: hidden;
+}
+.pay2_checkS p{
+    float: left;
+}
+.pay2_check{
+    padding-left: 30px;
+    width: 20%;
+}
+.pay2_nav,.pay2_check{
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+}
+.pay2_nav span{
+    font-size: 28px;
+}
+.pay2_nav span:first-child{
+    float: left;
+}
+.pay2_nav span:last-child{
+    float: right;
+}
+
+.pay2_ul{
+    width: 100%;
+    border: 2px solid #9bc3e0;
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 3px;
+}
+.pay2_ul li{
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+.pay2_ul li span{
+    margin-left: 20px;
+}
+.pay2_ul li:first-child{
+    overflow: hidden;
+    margin-left: 10px;
+}
+.pay2_ul li:first-child p:first-child{
+    font-size: 22px;
+    float: left;
+}
+.pay2_ul input{
+    height: 45px;
+    width: 320px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    font-size: 18px;
+    padding: 2px 10px;
+}
+.pay2_ul li:nth-child(3) input{
+    width: 150px;
+}
+.pay2_ul li:first-child p:last-child{
+    font-size: 22px;
+    float: right;
+}
+.pay2_bank img{
+    width: 70px;
+    height: 40px;
+    border: 1px solid gainsboro;
+}
+.pay2_pay{
+    overflow: hidden;
+    margin: 30px 0 100px 0;
+    font-size: 22px;
+    padding: 0 60px;
+}
+.pay2_pay p:first-child{
+    float: left;
+}
+.pay2_pay p:first-child a{
+    text-decoration:underline;
+}
+.pay2_pay p:last-child{
+    float: right;
+}
+.pay2_pay p:last-child button{
+    width: 250px;
+    height: 80px;
+    background: #44aaf6;
+    border: none;
+    color: white;
+    font-size: 30px;
+}

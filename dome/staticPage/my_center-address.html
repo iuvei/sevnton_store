@@ -1,0 +1,79 @@
+<div class="my_center_address">
+    <p><b>新增收货地址</b></p>
+    <ul class="my_address_contet">
+        <li>
+            <p>邮箱：</p>
+            <p>
+                <span class="mobil_verify"></span>
+                <input class="Email" type="text"/>
+            </p>
+        </li>
+        <li>
+            <p>收货人：</p>
+            <p><input class="receiver" type="text" ng-model="address_add.receiver" /></p>
+        </li>
+        <li>
+            <p>所在地区：</p>
+            <p style="padding-left: 5px">
+                <select class="sel province" ng-model="province" ng-options="province.name for province in provinceList" ng-change="pClick()"></select>
+                <select class="sel city"  ng-model="city" ng-options="city.name for city in cityList" ng-change="pClick1()" ></select>
+                <select class="sel district"  ng-model="district" ng-options="district.name for district in districtList" ng-change="pClick2()"></select>
+            </p>
+        </li>
+        <li>
+            <p>详细地址：</p>
+            <p><input class="address" type="text" ng-model="address_add.address" /></p>
+        </li>
+        <li>
+            <p>手机号码：</p>
+            <p>
+                <span class="mobil_verify"></span>
+                <input class="mobile" type="text" ng-model="address_add.mobile"/>
+            </p>
+            <p>固定电话：</p>
+            <p><input type="text"/></p>
+        </li>
+        <li>
+            <p>邮编：</p>
+            <p><input class="postcode" type="text" ng-model="address_add.postcode"/></p>
+        </li>
+        <li>
+            <p></p>
+            <p style="font-size: 14px"><label><input type="checkbox"><i>✓</i></label>&nbsp;&nbsp;存为默认收货地址</p>
+        </li>
+        <li>
+            <p></p>
+            <p><button>保存</button></p>
+        </li>
+    </ul>
+    <p class="alladdress_hrader">您已创建 <span>2</span> 个收货地址,最多可以创建 <span>20</span> 个</p>
+    <table class="myadd_table">
+        <tr class="alladdress_myNav">
+            <th><b>收货人</b></th>
+            <th><b>所在地区</b></th>
+            <th><b>详细地址</b></th>
+            <th><b>电话</b></th>
+            <th><b>操作</b></th>
+        </tr>
+        <tr class="alladdress_myCenter">
+            <td>廉亚龙</td>
+            <td>河南省&nbsp;商丘市&nbsp;民权县&nbsp;程庄镇</td>
+            <td>大家撒都不会-118</td>
+            <td>15560048800</td>
+            <td>
+                <p><span>删除</span>&nbsp;|&nbsp;<span>编辑</span></p>
+                <p>默认地址</p>
+            </td>
+        </tr>
+        <tr class="alladdress_myCenter">
+            <td>廉亚龙</td>
+            <td>河南省&nbsp;商丘市&nbsp;民权县&nbsp;程庄镇</td>
+            <td>大家撒都不会-118</td>
+            <td>15560048800</td>
+            <td>
+                <p><span>删除</span>&nbsp;|&nbsp;<span>编辑</span></p>
+                <p>默认地址</p>
+            </td>
+        </tr>
+    </table>
+</div>

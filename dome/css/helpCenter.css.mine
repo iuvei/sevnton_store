@@ -1,0 +1,55 @@
+.helpCent_wrap{
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+.helpCent_left{
+    background: white;
+    float: left;
+    width: 20%;
+    border: 1px solid darkgray;
+    border-top: none;
+}
+.helpCent_type1{
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+.helpCent_type .helpCent_type1:last-child{
+    margin-bottom: 0;
+}
+.helpCent_type2,.helpCent_type3{
+    display: none;
+}
+.type1_con{
+    line-height: 40px;
+    font-size: 20px;
+    color: black;
+    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+    padding: 5px 15%;
+    cursor: pointer;
+    background: #fafafa;
+}
+.type2_con a{
+    font-size: 16px;
+    color: grey;
+    margin-left: 15%;
+    cursor: pointer;
+}
+.type3_con a{
+    font-size: 14px;
+    color: grey;
+    margin-left: 20%;
+    cursor: pointer;
+}
+.helpCent_active{
+    color: #3da8f9 !important
+}
+
+.helpCent_right{
+    float: right;
+    width: 78%;
+    border: 1px solid darkgray;
+    height: 1000px;
+    background: white;
+}

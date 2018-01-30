@@ -1,0 +1,223 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+		<div class="pay_message">
+			<div class="pay_message_nav">
+				<img src="img/HDXX.png" alt="" />
+			</div>
+			
+			<div class="pay_address">
+				<p class="pay_address_header">Receiving information</p>
+				<form class="pay_address_wrap" name="myForm" novalidate ng-submit="sss()">
+					<ul class="pay_address_contet">
+						<li>
+							<p><sup>*</sup> Mailbox:</p>
+							<p>
+								<span style="color:red;font-size: 12px;" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+								<span ng-show="myForm.email.$dirty &&myForm.email.$error.required">*Mailbox is required!</span>
+								<span ng-show="myForm.email.$dirty &&myForm.email.$error.email">*The mailbox format is incorrect!</span>
+								<span ng-show="myForm.email.$dirty &&myForm.email.$error.minlength">*Mailbox length must not be less than 6 bits!</span>
+								</span><br>
+								<input class="Email"
+									   type="email"
+									   name="email"
+									   ng-minlength="6"
+									   ng-model="data.email"
+									   ng-required="true"/>
+							</p>
+						</li>
+						<li>
+							<p><sup>*</sup>Receiver:</p>
+							<p>
+								<span style="color:red;font-size: 12px;" ng-show="myForm.receiver.$dirty && myForm.receiver.$invalid">
+										<span ng-show="myForm.receiver.$dirty &&myForm.receiver.$error.minlength">*收货人长度不能小于2个字符!</span>
+										</span><br>
+								<input class="receiver"
+									   type="text"
+									   name="receiver"
+									   placeholder="Please enter the consignee's name!"
+									   ng-model="address_add.receiver"
+									   ng-minlength="2"
+									   ng-required="true"/>
+							</p>
+						</li>
+						<li>
+							<p><sup>*</sup>Location:</p>
+							<p style="padding-left: 5px" ng-if="huan == '0'">
+								<select class="sel province" ng-model="province" ng-options="province.name for province in provinceList" ng-change="pClick()"></select>
+								<select class="sel city"  ng-model="city" ng-options="city.name for city in cityList" ng-change="pClick1()" ></select>
+								<select class="sel district"  ng-model="district" ng-options="district.name for district in districtList" ng-change="pClick2()"></select>
+							</p>
+							<p style="padding-left: 5px" ng-click="huan1()" ng-if="huan == '1'">
+								<select class="sel city">
+									<option value="">{{address_add.state}}</option>
+								</select>
+								<select class="sel district">
+									<option value="">{{address_add.city}}</option>
+								</select>
+								<select class="sel province">
+									<option value="">{{address_add.district}}</option>
+								</select>
+							</p>
+						</li>
+						<li>
+							<p><sup>*</sup>Addresses:</p>
+							<p>
+								<span style="color:red;font-size: 12px;" ng-show="myForm.address.$dirty && myForm.address.$invalid">
+                        <span ng-show="myForm.address.$dirty &&myForm.address.$error.minlength">*The detail address length must not be less than 5 characters !</span>
+                        </span><br>
+								<textarea style="vertical-align: top"
+										  class="addressArea"
+										  name="address"
+										  placeholder="Please enter a detailed delivery address!"
+										  ng-model="address_add.address"
+										  ng-minlength="5"
+										  ng-required="true">
+								</textarea>
+							</p>
+						</li>
+						<li>
+							<p><sup>*</sup>Mobile：</p>
+							<p>
+								<span style="color:red;font-size: 12px;" ng-show="myForm.mobile.$dirty && myForm.mobile.$invalid">
+										<span ng-show="myForm.mobile.$dirty &&myForm.mobile.$error.required">*Cell phone number is required!</span>
+										<span ng-show="myForm.mobile.$dirty &&myForm.mobile.$error.pattern">*The phone number is not in the correct format !</span>
+										</span><br>
+								<input class="mobile"
+									   type="text"
+									   name="mobile"
+									   placeholder="Please enter phone number!"
+									   ng-model="address_add.mobile"
+									   ng-pattern="/^1[34578]\d{9}$/"
+									   ng-required="true"/>
+							</p>
+							<p>Telephone:</p>
+							<p><input type="text"/></p>
+						</li>
+						<li>
+							<p>Zip-code:</p>
+							<p>
+								 <span style="color:red;font-size: 12px;" ng-show="myForm.postcode.$dirty && myForm.postcode.$invalid">
+										<span ng-show="myForm.postcode.$dirty &&myForm.postcode.$error.pattern">*The zip code is not in the correct format!</span>
+										</span><br>
+								<input class="postcode"
+									   type="text"
+									   name="postcode"
+									   ng-pattern="/^[0-9][0-9]{5}$/"
+									   placeholder="If not how, you can enter000 000"
+									   ng-model="address_add.postcode"/></p>
+							</p>
+						</li>
+						<li>
+							<p></p>
+							<p style="font-size: 14px"><label><input type="checkbox" ng-model="address_add.isDefault"><i>✓</i></label>Save As Default</p>
+						</li>
+						<li>
+							<p></p>
+							<p><button type="submit" id="myadd_baocun" ng-click="addressAdd()">Save</button>
+								<button type="submit" id="myadd_xiugai" ng-click="Edit_address()">Modify</button>
+							</p>
+						</li>
+						<p class="close_add"><i ng-click="close_add()" class="icon iconfont icon-tishicuohao"></i></p>
+					</ul>
+				</form>
+				<ul class="pay_address_contet1">
+					<li class="addreSigle address_sigle" ng-repeat="address in addressList | filter:{'isDefault':1}:true">
+						<p addrID="{{address.addressID}}" address-click>
+							<b style="margin-right: 60px">{{address.name}}</b>
+							<b>{{address.phone}}</b>
+						</p>
+						<p addrID="{{address.addressID}}" address-click>
+							<span>{{address.province}}&nbsp;{{address.city}}&nbsp;{{address.district}}</span>
+							<br/>
+							<span>{{address.address}}</span>
+						</p>
+						<p>
+							<span class="Edit_address" addrID="{{address.addressID}}" address-click>Modify</span>
+							<!--ng-click="delete_address()"-->
+							<span class="delete_address"  addrid="{{address.addressID}}" address-click>Delete</span>
+							<span class="default_address" addrID="{{address.addressID}}" address-click style="color: red">Set Default</span>
+						</p>
+						<i class="icon iconfont icon-xuanzhong jiaojiao jiaojiao1"></i>
+					</li>
+					<li class="addreSigle" ng-repeat="address in addressList  | orderBy:'addressID':true | filter:{'isDefault':0}:true |limitTo:limit">
+						<p addrID="{{address.addressID}}" address-click>
+							<b style="margin-right: 60px">{{address.name}}</b>
+							<b>{{address.phone}}</b>
+						</p>
+						<p addrID="{{address.addressID}}" address-click>
+							<span>{{address.province}}&nbsp;{{address.city}}&nbsp;{{address.district}}</span>
+							<br/>
+							<span>{{address.address}}</span>
+						</p>
+						<p>
+							<span class="Edit_address" addrID="{{address.addressID}}" address-click>Modify</span>
+							<!--ng-click="delete_address()"-->
+							<span class="delete_address"  addrid="{{address.addressID}}" address-click>Delete</span>
+							<span class="default_address" addrID="{{address.addressID}}" address-click>Set Default</span>
+						</p>
+						<i class="icon iconfont icon-xuanzhong jiaojiao" addrID="{{address.addressID}}" address-click></i>
+					</li>
+					<div class="manage_address">
+						<p ng-if="limit == 3" ng-click="incrementLimit()">Show More</p>
+						<p ng-if="limit != 3" ng-click="decrementLimit()">Retract</p>
+						<p ng-click="add_address()">Add Delivery Address</p>
+					</div>
+				</ul>
+			</div>
+			
+			<div class="pay_conf_order">
+				<p class="pay_order_header">Confirm Order</p>
+				<div class="order_content">
+				<div class="store_message">
+					<p class="store" ><a href="#">{{supplierName}}</a></p>
+					<p class="merchant"><img src="img/seach/leave.png"/>Contact Seller</p>
+				</div>
+				<div class="order_nav">
+					<ul>
+						<li>Item Name：</li>
+						<li>Quantity:</li>
+						<li>Unit Price:</li>
+						<li>Total:</li>
+					</ul>
+				</div>
+				<section ng-repeat="payMes in waitSubmitList" class="order_article">
+					<ul>
+						<li>
+							<p><a ng-href="{{URL_ID}}/xiangqing?itemID={{payMes.itemID}}"><img lazy-src="{{payMes.picUrl}}" alt="" /></a></p>
+							<p>
+								<span class="article_name" title="{{payMes.itemName}}"><a ng-href="{{URL_ID}}/xiangqing?itemID={{payMes.itemID}}">{{payMes.itemName}}</a></span>
+								<br />
+								<span>{{payMes.skuName}}</span>
+							</p>
+						</li>
+						<li> <p>×{{payMes.skuAcount}}</p> </li>
+						<li>
+							<p style="color: black;font-weight: bold;font-size: 18px;">US {{payMes.salesPrice|currency}}</p>
+							<p style="font-size: 14px;">US {{payMes.salesPrice*1.2|currency}}</p>
+						</li>
+						<li>
+							<p style="font-size: 20px; font-weight: bold;">US {{payMes.skuAcount*payMes.salesPrice|currency}}</p>
+							<p>Free Postage</p>
+						</li>
+					</ul>
+				</section>
+				<div class="message_buyer">
+					<ul>
+						<li>Leave Message:</li>
+						<li><textarea ng-model="remark" placeholder="50 words at most" ng-change="checkText()"></textarea></li>
+						<li>
+							<p>Postage：<strong style="font-size: 18px;">US $0.00</strong></p>
+							<p>Total Price：<strong style="font-size: 20px;color: #aa2828;">US {{allPrices()|currency}}</strong></p>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+			</div>
+			
+			<div class="message_foot_inp">
+				<p>Total：<strong style="font-size: 28px;color: #44aaf6;">US {{allPrices()|currency}}</strong></p>
+				<button ng-click="order_Submit()">Submit Order</button>
+			</div>
+		</div>
+<div ng-include="'views/footer.html'"></div>

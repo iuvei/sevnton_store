@@ -1,0 +1,97 @@
+.helpCent_wrap{
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+.helpCent_left{
+    background: white;
+    float: left;
+<<<<<<< .mine
+    width: 20%;
+    border: 1px solid darkgray;
+||||||| .r825
+    width: 25%;
+    border: 1px solid darkgray;
+=======
+    width: 16%;
+    border: 1px solid gainsboro;
+>>>>>>> .r2068
+    border-top: none;
+}
+.helpCent_type1{
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+.helpCent_type .helpCent_type1:last-child{
+    margin-bottom: 0;
+}
+.helpCent_type2,.helpCent_type3{
+    display: none;
+}
+.type1_con{
+    line-height: 40px;
+<<<<<<< .mine
+    font-size: 20px;
+||||||| .r825
+    font-size: 25px;
+=======
+    font-size: 16px;
+>>>>>>> .r2068
+    color: black;
+    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+    padding: 0 12%;
+    cursor: pointer;
+    background: #fafafa;
+}
+.type2_con a{
+<<<<<<< .mine
+    font-size: 16px;
+||||||| .r825
+    font-size: 20px;
+=======
+    font-size: 14px;
+>>>>>>> .r2068
+    color: grey;
+    margin-left: 15%;
+    cursor: pointer;
+    line-height: 30px;
+}
+.type3_con a{
+<<<<<<< .mine
+    font-size: 14px;
+||||||| .r825
+    font-size: 16px;
+=======
+    font-size: 12px;
+>>>>>>> .r2068
+    color: grey;
+    margin-left: 20%;
+    cursor: pointer;
+}
+.helpCent_active{
+    color: #3da8f9 !important
+}
+
+.helpCent_right{
+    font-family: "微软雅黑"!important;
+    float: right;
+<<<<<<< .mine
+    width: 78%;
+    border: 1px solid darkgray;
+    height: 1000px;
+||||||| .r825
+    width: 73%;
+    border: 1px solid darkgray;
+    height: 1000px;
+=======
+    width: 83%;
+    border: 1px solid gainsboro;
+    min-height: 800px;
+>>>>>>> .r2068
+    background: white;
+    padding: 10px;
+}
+.helpCent_right img{
+    max-width: 100% !important;
+}

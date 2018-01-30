@@ -1,0 +1,53 @@
+var Request_URL = "http://sevnton.com:8080/b2b_mall";
+// var Request_URL = "https://sevnton.com/b2b_mall";
+var URL_ID = 'http://localhost:8080/#!';
+//手机号码的正则表达式函数
+function checkPhone() {
+    var phone = $(this).val();
+    var reg = /^1[34578]\d{9}$/; //手机号码的正则
+    if (!reg.test(phone)) { //手机号码格式错误
+        $(this).prev('span').html("手机号格式有误！");
+        $(this).prev('span').show();
+    } else { //手机号码格式正确
+        $(this).prev('span').hide();
+    }
+}
+function checkEmail() {
+    var phone = $(this).val();
+    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; //邮箱的正则
+    if (!reg.test(phone)) { //邮箱格式错误
+        $(this).prev('span').html("邮箱号格式有误！");
+        $(this).prev('span').show();
+    } else { //手机号码格式正确
+        $(this).prev('span').hide();
+    }
+}
+//账号正则验证手机号或者邮箱
+function checkAccount() {
+    var Account = $(this).val();
+    var reg1 = /^1[34578]\d{9}$/; //手机号码的正则
+    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//邮箱正则
+    if (!reg1.test(Account) && !reg.test(Account)) { //手机号或邮箱格式错误
+        $(this).prev('span').html("账号格式有误！");
+        $(this).prev('span').show();
+    } else { //手机号或邮箱格式正确
+        $(this).prev('span').hide();
+    }
+}
+//密码的正则表达式函数数字和字母组合
+function checkPsd() {
+    var psd = $(this).val();
+    var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;//密码的正则
+    if (!reg.test(psd)) {
+        $(this).prev('span').html("密码格式有误！");
+        $(this).prev('span').show();
+    } else {
+        $(this).prev('span').hide();
+    }
+}
+function MenuMainDown () {
+    $(".kind_left").slideDown();
+}
+function MenuMainUp () {
+    $(".kind_left").slideUp();
+}

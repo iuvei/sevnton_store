@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+<div ng-include="'views/header.html'"></div>
+	<div class="seach_content">
+		<p ng-if="path == '/seach/goods'" style="font-size: 16px;cursor: pointer;">
+			<span ui-sref="home">Index > </span><span ui-sref="classify"> All Category > </span>
+			<span ng-if="type1names != null&&type1names != ''"> {{type1names}} > </span>
+			<span ng-if="type2names != null&&type2names != ''"> {{type2names}} > </span>
+			<span ng-if="seach_value != ''"> {{seach_value}} > </span>
+			<span style="font-weight: bold;">{{page.totalCount}} items</span>
+		</p>
+		<p ng-if="path == '/seach/store'" style="font-size: 16px;cursor: pointer;">
+			<span ui-sref="home">Index > </span><span> Shop > </span>
+			<span ng-if="seach_value != ''"> {{seach_value}} > </span>
+			<span style="font-weight: bold;">{{stroeNum}} shops</span>
+		</p>
+		<div class="seach_content_left">
+				<ul class="left_ul" ng-repeat="categor in categoryList" ng-cloak>
+					<li ng-cloak>
+						<a  style="font-size: 18px" href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}" ng-if="categor.categoryID != categoryID&&categor.categoryName != type1names" >
+							<span class="glyphicon glyphicon-triangle-bottom" style="font-size: 16px"></span>&nbsp;{{categor.categoryName}}
+						</a>
+						<a style="font-size: 18px" href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{categor.categoryID}}&cType=1&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}" ng-if="categor.categoryID == categoryID||categor.categoryName == type1names" class="seachtype1">
+							<b><span class="glyphicon glyphicon-triangle-bottom" style="font-size: 16px"></span>&nbsp;{{categor.categoryName}}</b>
+						</a>
+						<p ng-if="thisid != categor.categoryID" ng-repeat="secChildCategor in categor.categories | limitTo:3" ng-cloak>
+							<a style="font-size: 14px" href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secChildCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{secChildCategor.categoryName}}" ng-if="secChildCategor.categoryID != categoryID&&secChildCategor.categoryName != type2names" class="defColor" seach-left>{{secChildCategor.categoryName}}</a>
+							<a style="font-size: 14px" href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secChildCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{secChildCategor.categoryName}}" ng-if="secChildCategor.categoryID == categoryID||secChildCategor.categoryName == type2names" class="defColor seachtype2" seach-left><b>{{secChildCategor.categoryName}}</b></a>
+						</p>
+						<p ng-if="thisid == categor.categoryID" ng-repeat="secChildCategor in categoryListChild" ng-cloak>
+							<a style="font-size: 14px" href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secChildCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{secChildCategor.categoryName}}" ng-if="secChildCategor.categoryID != categoryID&&secChildCategor.categoryName != type2names" class="defColor" seach-left>{{secChildCategor.categoryName}}</a>
+							<a style="font-size: 14px" href="{{URL_ID}}/seach/goods?keyword=&brandID=&categoryID={{secChildCategor.categoryID}}&cType=2&ordercondition=&type=&start=&end=&style={{styles}}&type1name={{categor.categoryName}}&type2name={{secChildCategor.categoryName}}" ng-if="secChildCategor.categoryID == categoryID||secChildCategor.categoryName == type2names" class="defColor seachtype2" seach-left><b>{{secChildCategor.categoryName}}</b></a>
+						</p>
+						<p style="font-size: 14px" ng-if="thisid != categor.categoryID" ng-click="getChild(categor.categoryID)">Show More</p>
+						<p style="font-size: 14px" ng-if="thisid == categor.categoryID" ng-click="closeChild()">Close</p>
+					</li>
+				</ul>
+		</div>
+		<div class="seach_content_center" ui-view=""></div>
+		<div class="seach_content_right">
+			<ul>
+				<li ng-repeat="item in itemList"><a ng-href="{{URL_ID}}/xiangqing?itemID={{item.itemID}}" target="_blank"><img lazy-src="{{item.picUrl}}" alt="" /><span title="{{item.itemName}}">{{item.itemName}}</span><p>${{item.skuList[0].salesPrice}}</p></a></li>
+			</ul>
+		</div>
+		<div class="seach_pages">
+			<p ng-click="previous()">Previous</p>
+			<p>[{{page.totalCount}}] ，[{{page.pageNo}}/{{page.pageCount}}]</p>
+			<p ng-click="next()">Next</p>
+		</div>
+	</div>
+<div ng-include="'views/footer.html'"></div>
+	

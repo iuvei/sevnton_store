@@ -1,0 +1,32 @@
+<div ng-include="'views/header.html'"></div>
+    <div class="my_Center_wrap">
+        <div class="my_Center_left">
+            <ul class="my_accountCentre">
+                <li><b>账户信息</b></li>
+                <li ui-sref=".all">收货地址</li>
+                <li>个人资料</li>
+                <li>安全设置</li>
+                <li>账号绑定</li>
+                <li>消息提醒设置</li>
+            </ul>
+            <ul class="my_orderCentre">
+                <li><b>订单中心</b></li>
+                <li>代付款</li>
+                <li>待收货</li>
+                <li>待评价</li>
+                <li>售后订单</li>
+                <li>我的评价</li>
+            </ul>
+            <ul class="my_collectCentre">
+                <li><b>收藏中心</b></li>
+                <li>商品</li>
+                <li>店铺</li>
+                <li>浏览历史</li>
+            </ul>
+        </div>
+        <div class="my_Center_right" ui-view=""></div>
+    </div>
+
+
+
+<div ng-include="'views/footer.html'"></div>

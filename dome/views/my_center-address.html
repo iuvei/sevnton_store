@@ -1,0 +1,151 @@
+<meta charset="utf-8">
+<div class="my_center_address">
+    <p><b ng-bind="headeraddH1"></b></p>
+    <form name="myForm" novalidate ng-submit="sss()">
+    <ul class="my_address_contet">
+        <li>
+            <p><sup>*</sup>e-Mail:</p>
+            <p>
+                <span style="color:red;font-size: 12px;" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                        <span ng-show="myForm.email.$dirty &&myForm.email.$error.required">*e-Mail is required!</span>
+                        <span ng-show="myForm.email.$dirty &&myForm.email.$error.email">*The mailbox format is incorrect!</span>
+                        <span ng-show="myForm.email.$dirty &&myForm.email.$error.minlength">*Mailbox length must not be less than 6 bits!</span>
+                        </span><br>
+                <input class="Email"
+                       type="email"
+                       name="email"
+                       ng-minlength="6"
+                       ng-model="data.email"
+                       ng-required="true"/>
+            </p>
+        </li>
+        <li>
+            <p><sup>*</sup>Receiver:</p>
+            <p>
+                <span style="color:red;font-size: 12px;" ng-show="myForm.receiver.$dirty && myForm.receiver.$invalid">
+                        <span ng-show="myForm.receiver.$dirty &&myForm.receiver.$error.minlength">*The length of the consignee must not be less than 2 characters!</span>
+                        </span><br>
+                <input class="receiver"
+                       type="text"
+                       name="receiver"
+                       placeholder="Please enter the consignee's name!"
+                       ng-model="address_add.receiver"
+                       ng-minlength="2"
+                       ng-required="true"/>
+            </p>
+        </li>
+        <li>
+            <p><sup>*</sup>Location:</p>
+            <!--ng-if="huan == '1'"-->
+            <p style="padding-left: 5px" ng-if="huan == '0'">
+                <select class="sel province" ng-model="province" ng-options="province.name for province in provinceList"
+                        ng-change="pClick()"></select>
+                <select class="sel city" ng-model="city" ng-options="city.name for city in cityList"
+                        ng-change="pClick1()"></select>
+                <select class="sel district" ng-model="district" ng-options="district.name for district in districtList"
+                        ng-change="pClick2()"></select>
+            </p>
+            <p style="padding-left: 5px" ng-click="huan1()" ng-if="huan == '1'">
+                <select class="sel city">
+                    <option value="">{{address_add.state}}</option>
+                </select>
+                <select class="sel district">
+                    <option value="">{{address_add.city}}</option>
+                </select>
+                <select class="sel province">
+                    <option value="">{{address_add.district}}</option>
+                </select>
+            </p>
+        </li>
+        <li>
+            <p style="vertical-align: top;padding-top: 22px;"><sup>*</sup>Full address:</p>
+            <p>
+                 <span style="color:red;font-size: 12px;" ng-show="myForm.address.$dirty && myForm.address.$invalid">
+                        <span ng-show="myForm.address.$dirty &&myForm.address.$error.minlength">*The detail address length must not be less than 5 characters!</span>
+                        </span><br>
+                <textarea style="vertical-align: top"
+                        class="addressArea"
+                        name="address"
+                        placeholder="Please enter the full address!"
+                        ng-model="address_add.address"
+                        ng-minlength="5"
+                        ng-required="true">
+                </textarea>
+
+            </p>
+        </li>
+        <li>
+            <p><sup>*</sup>phone:</p>
+            <p>
+                 <span style="color:red;font-size: 12px;" ng-show="myForm.mobile.$dirty && myForm.mobile.$invalid">
+                        <span ng-show="myForm.mobile.$dirty &&myForm.mobile.$error.required">*phone number is required!</span>
+                        <span ng-show="myForm.mobile.$dirty &&myForm.mobile.$error.pattern">*The phone number is not in the correct format!</span>
+                        </span><br>
+                <input class="mobile"
+                       type="text"
+                       name="mobile"
+                       placeholder="Please enter the full address 11 number of phone number!"
+                       ng-model="address_add.mobile"
+                       ng-pattern="/^1[34578]\d{9}$/"
+                       ng-required="true"/>
+            </p>
+            <p>mobile:</p>
+            <p><input type="text"/></p>
+        </li>
+        <li>
+            <p><sup>*</sup>zip Code:</p>
+            <p>
+                <span style="color:red;font-size: 12px;" ng-show="myForm.postcode.$dirty && myForm.postcode.$invalid">
+                        <span ng-show="myForm.postcode.$dirty &&myForm.postcode.$error.pattern">*The zip Code is not in the correct format!</span>
+                        </span><br>
+                <input class="postcode"
+                       type="text"
+                       name="postcode"
+                       ng-pattern="/^[0-9][0-9]{5}$/"
+                       placeholder="if you not know how to enter plz enter 000 000"
+                       ng-model="address_add.postcode"/></p>
+        </li>
+        <li>
+            <p></p>
+            <p style="font-size: 14px"></br>
+                <label><input type="checkbox" ng-model="address_add.isDefault"><i>✓</i></label>&nbsp;&nbsp;save as default address
+            </p>
+        </li>
+        <li style="margin-top: 10px;">
+            <p></p>
+            <p>
+                <button id="myadd_baocun" ng-click="addressAdd()">Save</button>
+                <button id="myadd_xiugai" ng-click="Edit_address()">Modify</button>
+            </p>
+        </li>
+    </ul>
+    </form>
+    <p class="alladdress_hrader">already <span>{{address_num}}</span> addresses</p>
+    <ul class="myadd_table">
+        <li class="alladdress_myNav">
+            <ul>
+                <li class="tab_name"><b>Receiver</b></li>
+                <li class="tad_add"><b>Location</b></li>
+                <li class="tad_add"><b>Full Address</b></li>
+                <li class="tad_phone"><b>phone/mobile></li>
+                <li class="tab_hand"><b>do</b></li>
+                <div class="clearfloat"></div>
+            </ul>
+        </li>
+        <li class="alladdress_myCenter" ng-repeat="address in addressList">
+            <ul>
+                <li class="tab_name" title="{{address.name}}">{{address.name}}</li>
+                <li class="tad_add" title="{{address.province}}{{address.city}}{{address.district}}">{{address.province}}&nbsp;{{address.city}}&nbsp;{{address.district}}</li>
+                <li class="tad_add" title="{{address.address}}">{{address.address}}</li>
+                <li class="tad_phone" title="{{address.phone}}">{{address.phone}}</li>
+                <li class="tab_hand last_td">
+                    <p><span class="delete_address" addrID="{{address.addressID}}" address-click>delete</span>&nbsp;|&nbsp;<span
+                            class="Edit_address" addrID="{{address.addressID}}" address-click>edit</span></p>
+                    <p ng-if="address.isDefault == 1">default</p>
+                    <p class="Default" ng-if="address.isDefault == 0" addrID="{{address.addressID}}" ng-click="Default_address()">default setting</p>
+                </li>
+                <div class="clearfloat"></div>
+            </ul>
+        </li>
+    </ul>
+</div>
